@@ -1,0 +1,12 @@
+[build]
+  base = "/"
+  publish = "dist/"
+
+[context.production]
+  command = "sh .netlify/scripts/deploy-prod.sh"
+
+[context.deploy-preview]
+  command = "sh .netlify/scripts/deploy-dev.sh"
+
+[context.branch-deploy]
+  command = "sh .netlify/scripts/deploy-dev.sh"

@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div>
+      {{ page }}
       <logo />
       <h1 class="title">
         freiluft-festival
@@ -25,11 +26,30 @@
 </template>
 
 <script>
+import gql from "graphql-tag"
 import Logo from "~/components/Logo.vue"
 
 export default {
   components: {
     Logo
+  },
+  data() {
+    return {
+      page: ""
+    }
+  },
+  apollo: {
+    page: {
+      query: gql`
+        query getPagehome {
+          PagehomeItem(id: "home") {
+            id
+            slug
+          }
+        }
+      `,
+      update: (data) => data.PagehomeItem
+    }
   }
 }
 </script>

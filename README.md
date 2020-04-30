@@ -1,6 +1,6 @@
 # freiluft-festival
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bdd5c326-1ded-41b3-ba18-a5ee25f209d7/deploy-status)](https://app.netlify.com/sites/freiluft-festival/deploys
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bdd5c326-1ded-41b3-ba18-a5ee25f209d7/deploy-status)](https://app.netlify.com/sites/freiluft-festival/deploys)
 
 > rebuild of the freiluftfestival.ch website
 

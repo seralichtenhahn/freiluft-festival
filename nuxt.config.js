@@ -36,12 +36,17 @@ export default {
   buildModules: [
     "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
-    "@wearewondrous/nuxt-storyblok-router"
+    "@wearewondrous/nuxt-storyblok-router",
+    "nuxt-webfontloader"
   ],
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/pwa", "@nuxtjs/dotenv", "@nuxtjs/apollo"],
+  modules: [
+    // "@nuxtjs/pwa",
+    "@nuxtjs/dotenv",
+    "@nuxtjs/apollo"
+  ],
 
   /*
    * Apollo settings
@@ -66,6 +71,17 @@ export default {
     accessToken: process.env.STORYBLOK_TOKEN,
     version: process.env.STORYBLOK_VERSION
   },
+
+  webfontloader: {
+    custom: {
+      families: ["Montserrat:n6,n7", "Raleway:n4"],
+      urls: [
+        "https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap",
+        "https://fonts.googleapis.com/css?family=Raleway:400&display=swap"
+      ]
+    }
+  },
+
   /*
    ** Build configuration
    */
@@ -73,7 +89,16 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {},
+    extend(config, ctx) {
+      const svgRule = config.module.rules.find((rule) => rule.test.test(".svg"))
+
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/
+
+      config.module.rules.push({
+        test: /\.svg$/,
+        use: ["babel-loader", "vue-svg-loader"]
+      })
+    },
     babel: {
       presets({ isServer }) {
         return [

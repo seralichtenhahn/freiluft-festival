@@ -96,7 +96,22 @@ export default {
 
       config.module.rules.push({
         test: /\.svg$/,
-        use: ["babel-loader", "vue-svg-loader"]
+        use: [
+          "babel-loader",
+          {
+            loader: "vue-svg-loader",
+            options: {
+              svgo: {
+                plugins: [
+                  { prefixIds: true },
+                  { removeDimensions: true },
+                  { removeViewBox: false },
+                  { removeTitle: true }
+                ]
+              }
+            }
+          }
+        ]
       })
     },
     babel: {

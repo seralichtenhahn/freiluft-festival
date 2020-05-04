@@ -1,9 +1,9 @@
 <template>
   <div>
     <AppHeader />
-    <div class="container">
+    <main class="container">
       content
-    </div>
+    </main>
   </div>
 </template>
 

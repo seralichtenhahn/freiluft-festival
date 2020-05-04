@@ -21,18 +21,34 @@
         </div>
       </div>
     </div>
+    <div class="absolute text-center bottom-0 w-full h-16">
+      <button class="mx-auto" @click="scrollToContent">
+        <IconChevron class="text-primary w-12 h-12" />
+      </button>
+    </div>
   </header>
 </template>
 
 <script>
 import GradientSVG from "@/assets/images/gradient_bg.svg"
 import LogoSVG from "@/assets/images/freiluft_logo.svg"
+import IconChevron from "@/assets/icons/chevron-down.svg"
 
 export default {
   name: "AppHeader",
   components: {
     GradientSVG,
-    LogoSVG
+    LogoSVG,
+    IconChevron
+  },
+  methods: {
+    scrollToContent(e) {
+      const mainEl = document.querySelector("main")
+
+      if (mainEl) {
+        mainEl.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+    }
   }
 }
 </script>

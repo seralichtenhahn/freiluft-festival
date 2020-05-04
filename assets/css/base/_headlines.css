@@ -1,0 +1,8 @@
+.is-h1, h1, .is-h2, h2 {
+  @apply font-headline;
+}
+
+.is-h1,
+h1 {
+  @apply text-9xl;
+}

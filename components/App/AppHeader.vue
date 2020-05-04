@@ -41,10 +41,11 @@ export default {
 h1 {
   @apply text-6xl font-bold text-center text-white tracking-wider leading-none;
 
-  text-shadow: 0.5rem 0 theme("colors.secondary");
+  text-shadow: 0.3rem 0 theme("colors.secondary");
 
   @screen md {
     @apply text-9xl;
+    text-shadow: 0.5rem 0 theme("colors.secondary");
   }
 
   @screen lg {

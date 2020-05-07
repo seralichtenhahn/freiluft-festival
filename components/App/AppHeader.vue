@@ -1,5 +1,8 @@
 <template>
-  <header class="relative w-full min-h-screen overflow-x-hidden">
+  <header
+    v-editable="blok"
+    class="relative w-full min-h-screen overflow-x-hidden mb-8 md:mb-24"
+  >
     <GradientSVG
       class="pb-16 h-screen min-w-full max-w-screen-lg md:max-w-none transform -translate-x-32 md:translate-x-0"
     />
@@ -11,11 +14,11 @@
           <LogoSVG class="w-8/12 md:w-auto mx-auto" />
         </div>
         <div class="flex-1">
-          <h1>freiluft festival</h1>
+          <h1>{{ blok.title }}</h1>
           <p class="w-full text-center bg-white px-4 leading-none">
             <time
               class=" text-justify text-4xl md:text-5xl lg:text-6xl font-headline text-cyan-darker"
-              >19. Juni 2020</time
+              >{{ blok.date }}</time
             >
           </p>
         </div>
@@ -40,6 +43,12 @@ export default {
     GradientSVG,
     LogoSVG,
     IconChevron
+  },
+  props: {
+    blok: {
+      type: Object,
+      required: true
+    }
   },
   methods: {
     scrollToContent(e) {

@@ -1,7 +1,7 @@
 /* purgecss start ignore */
 @import 'tailwindcss/base';
 
-/* @import './base/_typography'; */
+@import './base/_typography';
 @import './base/_headlines';
 
 @import 'tailwindcss/components';

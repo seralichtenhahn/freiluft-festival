@@ -29,7 +29,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["@plugins/components.js"],
   /*
    ** Nuxt.js dev-modules
    */
@@ -45,7 +45,8 @@ export default {
   modules: [
     // "@nuxtjs/pwa",
     "@nuxtjs/dotenv",
-    "@nuxtjs/apollo"
+    "@nuxtjs/apollo",
+    "storyblok-nuxt"
   ],
 
   /*

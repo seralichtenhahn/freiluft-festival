@@ -23,7 +23,8 @@
     "@nuxtjs/apollo": "^4.0.0-rc19",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "storyblok-nuxt": "^1.2.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

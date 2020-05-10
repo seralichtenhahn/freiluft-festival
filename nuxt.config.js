@@ -29,7 +29,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@plugins/components.js"],
+  plugins: ["@/plugins/components.js", "@/plugins/filters.js"],
   /*
    ** Nuxt.js dev-modules
    */

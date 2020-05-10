@@ -1,5 +1,5 @@
-.is-h1, h1, .is-h2, h2 {
-  @apply font-headline;
+.is-h1, h1, .is-h2, h2, .is-h3, h3 {
+  @apply font-headline text-headline;
 }
 
 .is-h1,
@@ -9,7 +9,7 @@ h1 {
 
 .rich-text {
   & h2 {
-    @apply text-4xl text-headline flex justify-between flex-wrap mb-8;
+    @apply text-4xl flex justify-between flex-wrap mb-8;
 
     & .h2-text {
       @apply w-full block text-justify flex-grow flex-shrink-0;

@@ -1,5 +1,5 @@
 p {
-  @apply font-body text-lg not-italic font-normal leading-8 normal-case tracking-normal text-body;
+  @apply font-body not-italic font-normal leading-relaxed normal-case tracking-normal text-body;
 
   & strong,
   & b {

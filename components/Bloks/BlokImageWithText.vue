@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="container mx-auto mb-4">
+  <div v-editable="blok" class="container mx-auto mb-8 md:mb-24">
     <div class="flex flex-wrap md:flex-no-wrap md:items-start">
       <BaseRichText :content="blok.text" class="w-full md:w-1/2 md:flex-none" />
       <BaseImage

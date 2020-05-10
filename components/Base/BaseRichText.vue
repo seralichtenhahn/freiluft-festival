@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable-next-line -->
-  <div class="rich-text" v-html="renderedHtml" />
+  <div class="rich-text" :class="[classFontSize]" v-html="renderedHtml" />
 </template>
 
 <script>
@@ -9,6 +9,10 @@ export default {
     content: {
       type: [Object, String],
       required: true
+    },
+    fontSize: {
+      type: String,
+      default: "lg"
     }
   },
   computed: {
@@ -17,6 +21,9 @@ export default {
         return ""
       }
       return this.$storyapi.richTextResolver.render(this.content)
+    },
+    classFontSize() {
+      return `text-${this.fontSize}`
     }
   }
 }

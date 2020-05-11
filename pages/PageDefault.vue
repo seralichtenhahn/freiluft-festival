@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <AppHeader v-if="page.header.length" :blok="page.header[0]" />
+  <div class="min-h-screen-90">
+    <header class="container mx-auto pt-16">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl">{{ page.title }}</h1>
+    </header>
     <main class="pt-8">
       <component
         :is="blok.component"
@@ -14,18 +16,14 @@
 
 <script>
 import gql from "graphql-tag"
-import AppHeader from "@/components/App/AppHeader"
 import storyBlokPage from "@/mixins/storyBlokPage"
 
 export default {
-  components: {
-    AppHeader
-  },
   mixins: [storyBlokPage],
   data() {
     return {
       page: {
-        header: [],
+        title: "",
         content: []
       }
     }
@@ -33,16 +31,21 @@ export default {
   apollo: {
     page: {
       query: gql`
-        query getPagehome {
-          PagehomeItem(id: "home") {
+        query getPageDefault($id: ID!) {
+          PagedefaultItem(id: $id) {
             content {
-              header
+              title
               content
             }
           }
         }
       `,
-      update: (data) => data.PagehomeItem.content
+      update: (data) => data.PagedefaultItem.content,
+      variables() {
+        return {
+          id: this.$route.path
+        }
+      }
     }
   }
 }

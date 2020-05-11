@@ -12,7 +12,9 @@ export default {
       }
       return `https://${url}`
     },
-    translateInternalUrl(url) {
+    translateInternalUrl(story) {
+      const url = story === "home" ? "" : story
+
       if (url.startsWith("/")) {
         return url
       }

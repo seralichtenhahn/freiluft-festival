@@ -13,7 +13,7 @@ p {
 
 .rich-text {
   & p {
-    @apply mb-4;
+    @apply mb-4 max-w-screen-md;
   }
 
   & li {

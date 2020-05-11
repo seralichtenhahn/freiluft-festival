@@ -2,11 +2,6 @@
   @apply font-headline text-headline;
 }
 
-.is-h1,
-h1 {
-  @apply text-9xl;
-}
-
 .rich-text {
   & h2 {
     @apply text-4xl flex justify-between flex-wrap mb-8;

@@ -28,6 +28,9 @@ module.exports = {
         "7xl": "5rem",
         "9xl": "6rem",
         "12xl": "8rem"
+      },
+      minHeight: {
+        "screen-90": "90vh"
       }
     }
   },

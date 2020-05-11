@@ -71,7 +71,8 @@ export default {
   storyblokRouter: {
     accessToken: process.env.STORYBLOK_TOKEN,
     version: process.env.STORYBLOK_VERSION,
-    exclude: ["_settings"]
+    exclude: ["_settings"],
+    useFallback: true
   },
 
   webfontloader: {

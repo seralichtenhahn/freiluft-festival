@@ -4,9 +4,9 @@
     :href="blok.link"
     target="_blank"
     rel="noopener"
-    class="w-5 opacity-50 text-headline"
+    class="opacity-50 text-headline mr-2"
   >
-    <component :is="blok.type" />
+    <component :is="blok.type" class="h-5 w-auto" />
   </a>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div
     v-editable="blok"
-    class="container mx-auto md:px-24 lg:px-56 mb-8 md:mb-16"
+    class="container mx-auto md:px-24 lg:px-56 mb-8 md:mb-32"
   >
     <h2 class="text-headline text-2xl md:text-3xl">
       {{ blok.title }}

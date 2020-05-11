@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="container mx-auto mb-16 md:mb-24">
+  <div v-editable="blok" class="container mx-auto mb-16 md:mb-32">
     <div class="flex flex-wrap md:flex-no-wrap md:items-center">
       <BaseImage
         :image="blok.image[0]"
@@ -9,7 +9,7 @@
       <div class="w-full md:w-1/2 lg:w-7/12">
         <p v-if="blok.time">{{ blok.time }}</p>
         <h3
-          class="text-4xl font-bold leading-none mb-2 md:text-6xl lg:text-9xl"
+          class="text-4xl font-bold leading-none mb-2 md:text-6xl lg:text-9xl md:mb-6"
         >
           {{ blok.title }}
         </h3>

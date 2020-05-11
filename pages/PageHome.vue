@@ -4,7 +4,7 @@
       v-if="page.content.header.length"
       :blok="page.content.header[0]"
     />
-    <main>
+    <main class="pt-8">
       <component
         :is="blok.component"
         v-for="blok in page.content.content"

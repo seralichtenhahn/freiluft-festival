@@ -10,7 +10,9 @@
       class="absolute inset-0 flex justify-center container items-center mx-auto"
     >
       <div class="flex flex-col md:flex-row pb-16 md:items-center">
-        <div class="flex-1 pb-8 md:pb-0 md:pr-8">
+        <div
+          class="flex-1 pb-8 md:pb-0 md:pr-8 lg:max-w-md xl:pr-16 lg:max-w-lg"
+        >
           <LogoSVG class="w-8/12 md:w-auto mx-auto" />
         </div>
         <div class="flex-1">

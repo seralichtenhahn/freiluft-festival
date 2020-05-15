@@ -17,7 +17,10 @@
         </div>
         <div class="flex-1">
           <h1>{{ blok.title }}</h1>
-          <p class="w-full text-center bg-white px-4 leading-none">
+          <p
+            v-if="blok.date"
+            class="w-full text-center bg-white px-4 leading-none"
+          >
             <time
               class=" text-justify text-4xl md:text-5xl lg:text-6xl font-headline text-cyan-darker"
               >{{ blok.date }}</time
@@ -72,6 +75,7 @@ h1 {
 
   @screen md {
     @apply text-9xl;
+
     text-shadow: 0.5rem 0 theme("colors.secondary");
   }
 

@@ -26,7 +26,8 @@ export default {
     return {
       page: {
         header: [],
-        content: []
+        content: [],
+        meta: []
       }
     }
   },
@@ -38,6 +39,7 @@ export default {
             content {
               header
               content
+              meta
             }
           }
         }

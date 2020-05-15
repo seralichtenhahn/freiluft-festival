@@ -1,6 +1,6 @@
 import storyBlokLivePreview from "@/mixins/storyBlokLivePreview"
-// import metaData from "@/mixins/metaData"
+import metaData from "@/mixins/metaData"
 
 export default {
-  mixins: [storyBlokLivePreview]
+  mixins: [storyBlokLivePreview, metaData]
 }

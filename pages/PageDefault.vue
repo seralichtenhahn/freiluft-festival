@@ -36,6 +36,7 @@ export default {
             content {
               title
               content
+              meta
             }
           }
         }

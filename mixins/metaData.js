@@ -1,10 +1,25 @@
+import gql from "graphql-tag"
+
 export default {
+  apollo: {
+    defaultMeta: {
+      query: gql`
+        query getDefaultMeta {
+          SettingsItem(id: "_settings") {
+            content {
+              meta
+            }
+          }
+        }
+      `,
+      update: (data) => data.SettingsItem.content.meta[0]
+    }
+  },
   head() {
-    const head = { titleTemplate: "%s | Pfadi Falkenstein Basel - Binningen" }
+    const head = {}
     let meta =
-      this.story.content.meta !== undefined &&
-      this.story.content.meta.length !== 0
-        ? this.story.content.meta[0]
+      this.page.meta !== undefined && this.page.meta.length !== 0
+        ? this.page.meta[0]
         : false
     if (meta) {
       meta = {
@@ -13,17 +28,10 @@ export default {
       }
     }
 
-    let defaultMeta = this.$store.state.storyBlok.settings.meta[0]
-
-    if (defaultMeta) {
-      defaultMeta = {
-        ...this.$store.state.storyBlok.settings.meta[0],
-        ...this.$store.state.storyBlok.settings.meta[0].tags
-      }
-    }
+    const defaultMeta = this.defaultMeta
 
     const currentLanguage = "de-CH"
-    const rootDomain = "https://www.falkenstein.ch/"
+    const rootDomain = "https://freiluftfestival.ch/"
 
     function createOgTag(property, content) {
       if (content && content !== "") {
@@ -71,6 +79,13 @@ export default {
       } else {
         return {}
       }
+    }
+
+    // title template
+    if (meta && meta.title_template !== "") {
+      head.titleTemplate = meta.title_template
+    } else {
+      head.titleTemplate = defaultMeta.title_template
     }
 
     // title
@@ -128,6 +143,8 @@ export default {
     head.htmlAttrs = {
       lang: currentLanguage
     }
+
+    console.log(head)
 
     return head
   }

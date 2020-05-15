@@ -144,8 +144,6 @@ export default {
       lang: currentLanguage
     }
 
-    console.log(head)
-
     return head
   }
 }

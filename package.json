@@ -24,6 +24,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "nuxt": "^2.0.0",
+    "simplelightbox": "git+https://github.com/seralichtenhahn/simplelightbox.git",
     "storyblok-nuxt": "^1.2.0"
   },
   "devDependencies": {

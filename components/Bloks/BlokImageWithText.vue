@@ -1,7 +1,17 @@
 <template>
   <div v-editable="blok" class="container mx-auto mb-8 md:mb-48">
     <div class="flex flex-wrap md:flex-no-wrap md:items-start">
-      <BaseRichText :content="blok.text" class="w-full md:w-1/2 md:flex-none" />
+      <div class="w-full md:w-1/2 md:flex-none mb-4 md:mb-0">
+        <BaseRichText :content="blok.text" />
+        <BaseLink
+          v-if="blok.cta_link"
+          :link="blok.cta_link"
+          class="text-primary font-headline font-semibold uppercase border-primary border-b-2 text-primary"
+        >
+          <template v-if="blok.cta_name">{{ blok.cta_name }}</template>
+          <template v-else>{{ blok.cta_link.cached_url }}</template>
+        </BaseLink>
+      </div>
       <BaseImage
         :image="blok.image[0]"
         :class="[imageStyle]"
@@ -13,11 +23,13 @@
 
 <script>
 import BaseImage from "@/components/Base/BaseImage"
+import BaseLink from "@/components/Base/BaseLink"
 import BaseRichText from "@/components/Base/BaseRichText"
 
 export default {
   components: {
     BaseImage,
+    BaseLink,
     BaseRichText
   },
   props: {

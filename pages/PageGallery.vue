@@ -15,7 +15,7 @@
           :key="image.name"
           class="w-1/3 p-1 lg:p-6"
         >
-          <a :href="image.src">
+          <a ref="lightboxElements" :href="image.src" @click="showLightbox">
             <BaseImage :image="image" :options="imageOptions" />
           </a>
         </li>
@@ -90,10 +90,6 @@ export default {
       }
     }
   },
-  mounted() {
-    this.lightboxes = new SimpleLightbox("main li a")
-    console.log(document.querySelectorAll("main li a"))
-  },
   methods: {
     getAltName(image) {
       if (image.name) {
@@ -103,6 +99,15 @@ export default {
       const name = image.filename.split("/")
 
       return name[name.length - 1]
+    },
+    showLightbox(e) {
+      e.preventDefault()
+      if (!this.lightboxes) {
+        this.lightboxes = new SimpleLightbox(this.$refs.lightboxElements)
+
+        const target = e.path.find((el) => el.nodeName === "A")
+        this.lightboxes.open(target)
+      }
     }
   }
 }

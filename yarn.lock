@@ -9394,9 +9394,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-"simplelightbox@git+https://github.com/seralichtenhahn/simplelightbox.git":
-  version "2.1.5"
-  resolved "git+https://github.com/seralichtenhahn/simplelightbox.git#6c90290d3336d96a614ab1068180dc69b26557da"
+simplelightbox@^2.0.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/simplelightbox/-/simplelightbox-2.2.0.tgz#2f1f868f9c6d2f4f371909339d695eec76e910a0"
+  integrity sha512-IYGbw5c3QnG5fCHHCpEnOi50ty+dwj5OnW97Wtt5dmzJ5Z13pLFvXvHtnIEhimTcEwDysKQ+uTpgDnWt42Qg1Q==
 
 sitemap@^2.2.0:
   version "2.2.0"

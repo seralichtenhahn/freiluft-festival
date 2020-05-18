@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "name": "freiluft-festival",
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {}
+    }
+  ],
+  "regions": ["bru1"],
+  "public": true,
+  "github": {
+    "enabled": true,
+    "silent": false
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production",
+      "STORYBLOK_ONLY_PUBLIC": "0",
+      "RUN_WITH_SSR": "1",
+      "STORYBLOK_VERSION": "draft"
+    }
+  },
+  "env": {
+    "NODE_ENV": "production",
+    "STORYBLOK_ONLY_PUBLIC": "0",
+    "RUN_WITH_SSR": "1",
+    "STORYBLOK_VERSION": "draft"
+  },
+  "routes": [
+    {
+      "src": "/_nuxt/.+",
+      "headers": {
+        "cache-control": "s-maxage=31536000",
+        "X-Robots-Tag": "none"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "headers": {
+        "X-Robots-Tag": "none"
+      },
+      "dest": "/"
+    }
+  ]
+}

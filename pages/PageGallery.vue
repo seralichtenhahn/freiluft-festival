@@ -50,7 +50,8 @@ export default {
         { type: "image/webp", media: false, width: "256" },
         { type: false, media: "(min-width: 768px)", width: "480" },
         { type: false, media: false, width: "256" }
-      ]
+      ],
+      lightboxes: null
     }
   },
   computed: {
@@ -90,8 +91,8 @@ export default {
     }
   },
   mounted() {
-    const lightboxes = new SimpleLightbox("main li a")
-    console.log(lightboxes)
+    this.lightboxes = new SimpleLightbox("main li a")
+    console.log(document.querySelectorAll("main li a"))
   },
   methods: {
     getAltName(image) {
@@ -108,8 +109,6 @@ export default {
 </script>
 
 <style lang="postcss">
-@import "simplelightbox/dist/simple-lightbox.min.css";
-
 .sl-overlay {
   @apply bg-primary opacity-75;
 }

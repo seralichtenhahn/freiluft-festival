@@ -5,5 +5,9 @@
 @import './base/_headlines';
 
 @import 'tailwindcss/components';
+
+/* Packages */
+@import 'simplelightbox/dist/simple-lightbox.min.css';
+
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';

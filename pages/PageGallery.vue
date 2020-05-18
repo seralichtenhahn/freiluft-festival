@@ -15,7 +15,11 @@
           :key="image.name"
           class="w-1/3 p-1 lg:p-6"
         >
-          <a ref="lightboxElements" :href="image.src" @click="showLightbox">
+          <a
+            ref="lightboxElements"
+            :href="image.src | transformImage('1200x0/smart')"
+            @click="showLightbox"
+          >
             <BaseImage :image="image" :options="imageOptions" />
           </a>
         </li>

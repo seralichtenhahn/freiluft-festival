@@ -1,6 +1,11 @@
 <template>
   <!-- eslint-disable-next-line -->
-  <div class="rich-text" :class="[classFontSize]" v-html="renderedHtml" />
+  <div
+    ref="richText"
+    class="rich-text"
+    :class="[classFontSize]"
+    v-html="renderedHtml"
+  />
 </template>
 
 <script>
@@ -24,6 +29,32 @@ export default {
     },
     classFontSize() {
       return `text-${this.fontSize}`
+    }
+  },
+  mounted() {
+    const linksEl = this.$refs.richText.querySelectorAll(
+      ".rich-text a[linktype='story']"
+    )
+
+    if (!linksEl.length) {
+      return
+    }
+
+    linksEl.forEach((el) => {
+      el.addEventListener("click", this.onLinkClick)
+    })
+
+    this.$once("hook:beforeDestroy", () => {
+      linksEl.forEach((el) => {
+        el.removeEventListener("click", this.onLinkClick)
+      })
+    })
+  },
+  methods: {
+    onLinkClick(e) {
+      e.preventDefault()
+      const to = e.target.pathname
+      this.$router.push(to)
     }
   }
 }

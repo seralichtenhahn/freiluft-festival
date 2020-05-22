@@ -1,11 +1,12 @@
 <template>
-  <!-- eslint-disable-next-line -->
+  <!-- eslint-disable -->
   <div
     ref="richText"
     class="rich-text"
     :class="[classFontSize]"
-    v-html="renderedHtml"
+    v-html="renderedHtml" 
   />
+  <!-- eslint-enable -->
 </template>
 
 <script>
@@ -32,9 +33,7 @@ export default {
     }
   },
   mounted() {
-    const linksEl = this.$refs.richText.querySelectorAll(
-      ".rich-text a[linktype='story']"
-    )
+    const linksEl = this.$refs.richText.querySelectorAll("a[linktype='story']")
 
     if (!linksEl.length) {
       return
@@ -53,8 +52,7 @@ export default {
   methods: {
     onLinkClick(e) {
       e.preventDefault()
-      const to = e.target.pathname
-      this.$router.push(to)
+      this.$router.push(e.target.pathname)
     }
   }
 }

@@ -64,16 +64,32 @@ export default {
       }
     }
 
-    function createMetaTag(name, content) {
+    function createMetaImage(name, prefix = "") {
+      const url =
+        meta && meta.og_image !== "" ? meta.og_image : defaultMeta.og_image
+
+      if (url !== undefined && url !== "") {
+        const ogImgUrl = url.startsWith("http") ? url : `https:${url}`
+        return {
+          name: prefix + name,
+          content: ogImgUrl,
+          hid: name
+        }
+      } else {
+        return {}
+      }
+    }
+
+    function createMetaTag(name, content, prefix = "") {
       if (content && content !== "") {
         return {
-          name,
+          name: prefix + name,
           content,
           hid: name
         }
       } else if (defaultMeta[name] !== "") {
         return {
-          name,
+          name: prefix + name,
           content: defaultMeta[name]
         }
       } else {
@@ -95,6 +111,13 @@ export default {
       head.title = defaultMeta.title
     }
 
+    let thisPath = ""
+    const links = []
+
+    if (this.$route.matched.length) {
+      thisPath = this.$route.matched[0].path
+    }
+
     // meta tags
     const metaTags = []
 
@@ -103,19 +126,17 @@ export default {
 
     metaTags.push(createOgTag("title", meta.title))
     metaTags.push(createOgTag("description", meta.description))
+    metaTags.push(createOgTag("site_name", meta.site_name))
+    metaTags.push(createOgTag("type", meta.type))
+    metaTags.push(createOgTag("url", rootDomain + thisPath))
+    metaTags.push(createOgTag("locale", currentLanguage))
     metaTags.push(createOgImage())
 
-    let thisPath = ""
-    const links = []
-
-    if (this.$route.matched.length) {
-      thisPath = this.$route.matched[0].path
-    }
-
-    metaTags.push({
-      property: "og:url",
-      content: rootDomain + thisPath
-    })
+    // Twitter meta tags
+    metaTags.push(createMetaTag("title", meta.title, "twitter:"))
+    metaTags.push(createMetaTag("description", meta.description, "twitter:"))
+    metaTags.push(createMetaTag("card", "summary_large_image", "twitter:"))
+    metaTags.push(createMetaImage("image", "twitter:"))
 
     links.push({
       rel: "revision",

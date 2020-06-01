@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import RichTextResolver from "storyblok-js-client/source/richTextResolver"
+
 export default {
   props: {
     content: {
@@ -26,7 +28,8 @@ export default {
       if (!this.content) {
         return ""
       }
-      return this.$storyapi.richTextResolver.render(this.content)
+      const richTextResolver = new RichTextResolver()
+      return richTextResolver.render(this.content)
     },
     classFontSize() {
       return `text-${this.fontSize}`

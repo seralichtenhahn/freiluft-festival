@@ -112,7 +112,6 @@ export default {
     }
 
     let thisPath = ""
-    const links = []
 
     if (this.$route.matched.length) {
       thisPath = this.$route.matched[0].path
@@ -120,6 +119,7 @@ export default {
 
     // meta tags
     const metaTags = []
+    const links = []
 
     metaTags.push(createMetaTag("description", meta.description))
     metaTags.push(createMetaTag("keywords", meta.keywords))

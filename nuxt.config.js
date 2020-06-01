@@ -13,6 +13,12 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   /*
+   ** ENV Varables
+   */
+  env: {
+    STORYBLOK_TOKEN: process.env.STORYBLOK_TOKEN
+  },
+  /*
    ** Customize the progress-bar color
    */
   loading: { color: "#fff" },
@@ -23,7 +29,12 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@/plugins/components.js", "@/plugins/filters.js"],
+  plugins: [
+    "@/plugins/components.js",
+    "@/plugins/filters.js",
+    "@/plugins/imports.js",
+    "@/plugins/storyblok.js"
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -39,8 +50,7 @@ export default {
   modules: [
     // "@nuxtjs/pwa",
     "@nuxtjs/dotenv",
-    "@nuxtjs/apollo",
-    "storyblok-nuxt"
+    "@nuxtjs/apollo"
   ],
 
   /*
@@ -123,6 +133,7 @@ export default {
           ]
         ]
       }
-    }
+    },
+    analyze: true
   }
 }

@@ -3,7 +3,7 @@
     <div class="container mx-auto">
       <h1>{{ page.content.title }}</h1>
     </div>
-    <main class="pt-8">
+    <main v-if="page.content.content" class="pt-8">
       <component
         :is="blok.component"
         v-for="blok in page.content.content"

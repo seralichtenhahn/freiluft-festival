@@ -1,12 +1,7 @@
 <template>
-  <a
-    v-editable="blok"
-    :href="blok.link"
-    target="_blank"
-    rel="noopener"
-    class="opacity-50 text-headline mr-2"
-  >
+  <a v-editable="blok" :href="blok.link" target="_blank" rel="noopener">
     <component :is="blok.type" class="h-5 w-auto" />
+    <span class="sr-only">{{ blok.type }}</span>
   </a>
 </template>
 

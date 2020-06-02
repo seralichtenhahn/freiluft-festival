@@ -13,6 +13,7 @@
       </li>
     </ul>
     <button @click="toggleMenu">
+      <span class="sr-only">Navigation öffnen</span>
       <span
         v-for="i in 3"
         :key="i"
@@ -32,6 +33,7 @@
           class="absolute bg-white w-full h-full p-4 flex flex-col justify-between"
         >
           <button class="absolute top-0 right-0 w-8 h-8 m-2" @click="closeMenu">
+            <span class="sr-only">Navigation schliessen</span>
             <IconX class="text-headline" />
           </button>
           <ul class="pt-16 container mx-auto">

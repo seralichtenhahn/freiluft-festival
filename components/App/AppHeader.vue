@@ -31,6 +31,7 @@
     </div>
     <div class="absolute text-center bottom-0 w-full h-16">
       <button class="mx-auto" @click="scrollToContent">
+        <span class="sr-only">Zum Inhalt scrollen</span>
         <IconChevron class="text-primary w-12 h-12" />
       </button>
     </div>

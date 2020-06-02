@@ -4,7 +4,7 @@
       <div class="w-full md:w-1/2 md:flex-none mb-4 md:mb-0">
         <BaseRichText :content="blok.text" />
         <BaseLink
-          v-if="blok.cta_link"
+          v-if="blok.cta_link && blok.cta_link.cached_url"
           :link="blok.cta_link"
           class="text-primary font-headline font-semibold uppercase border-primary border-b-2 text-primary"
         >

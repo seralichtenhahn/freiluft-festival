@@ -10,6 +10,10 @@ export default {
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#8BD2F5" }
+    ],
+    link: [
+      { rel: "shortcut icon", href: "favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "favicon.ico", type: "image/x-icon" }
     ]
   },
   /*

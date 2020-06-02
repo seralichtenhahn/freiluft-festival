@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "freiluft-festival",
   "builds": [
     {
       "src": "nuxt.config.js",

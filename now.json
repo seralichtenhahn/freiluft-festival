@@ -18,15 +18,13 @@
     "env": {
       "NODE_ENV": "production",
       "STORYBLOK_ONLY_PUBLIC": "0",
-      "RUN_WITH_SSR": "1",
-      "STORYBLOK_VERSION": "draft"
+      "RUN_WITH_SSR": "1"
     }
   },
   "env": {
     "NODE_ENV": "production",
     "STORYBLOK_ONLY_PUBLIC": "0",
-    "RUN_WITH_SSR": "1",
-    "STORYBLOK_VERSION": "draft"
+    "RUN_WITH_SSR": "1"
   },
   "routes": [
     {

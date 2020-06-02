@@ -24,6 +24,7 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "animejs": "^3.2.0",
+    "lazysizes": "^5.2.2",
     "nuxt": "^2.0.0",
     "simplelightbox": "^2.0.0",
     "storyblok-js-client": "^2.5.0",

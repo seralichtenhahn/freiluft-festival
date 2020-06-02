@@ -18,9 +18,14 @@
           <a
             ref="lightboxElements"
             :href="image.src | transformImage('1200x0/smart')"
+            class="block w-full relative pb-1/1 w-full"
             @click="showLightbox"
           >
-            <BaseImage :image="image" :options="imageOptions" />
+            <BaseImage
+              :image="image"
+              :options="imageOptions"
+              :placeholder="true"
+            />
           </a>
         </li>
       </ul>

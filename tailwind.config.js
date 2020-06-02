@@ -31,6 +31,10 @@ module.exports = {
       },
       minHeight: {
         "screen-90": "90vh"
+      },
+      spacing: {
+        "9/16": "56.25%",
+        "1/1": "100%"
       }
     }
   },

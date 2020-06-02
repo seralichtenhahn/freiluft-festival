@@ -3,20 +3,34 @@
     <source
       v-for="(option, i) in options"
       :key="i"
-      :srcset="getSourceSet(option)"
+      :data-srcset="getSourceSet(option)"
       :media="option.media"
       :type="option.type"
     />
-    <img :src="image.src | transformImage('0x1200/smart')" :alt="image.alt" />
+    <img
+      :data-src="getPath({ width: 1200 })"
+      :alt="image.alt"
+      :class="[imgClasses]"
+    />
   </picture>
 </template>
 
 <script>
+import "lazysizes"
+
 export default {
   props: {
     image: {
       type: Object,
       required: true
+    },
+    placeholder: {
+      type: Boolean,
+      default: false
+    },
+    lazy: {
+      type: Boolean,
+      default: true
     },
     options: {
       type: Array,
@@ -26,6 +40,18 @@ export default {
         { type: false, media: "(min-width: 768px)", width: "1080" },
         { type: false, media: false, width: "720" }
       ]
+    }
+  },
+  computed: {
+    hasPlaceholder() {
+      if (!this.placeholder) {
+        return false
+      }
+
+      return "/placeholder/lqip-1x1.jpg"
+    },
+    imgClasses() {
+      return { lazyload: this.lazy, preview: this.placeholder }
     }
   },
   methods: {
@@ -75,3 +101,9 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss" scoped>
+.preview {
+  @apply bg-primary absolute h-full w-full object-cover;
+}
+</style>

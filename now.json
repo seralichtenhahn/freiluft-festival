@@ -14,18 +14,6 @@
     "enabled": true,
     "silent": false
   },
-  "build": {
-    "env": {
-      "NODE_ENV": "production",
-      "STORYBLOK_ONLY_PUBLIC": "0",
-      "RUN_WITH_SSR": "1"
-    }
-  },
-  "env": {
-    "NODE_ENV": "production",
-    "STORYBLOK_ONLY_PUBLIC": "0",
-    "RUN_WITH_SSR": "1"
-  },
   "routes": [
     {
       "src": "/_nuxt/.+",

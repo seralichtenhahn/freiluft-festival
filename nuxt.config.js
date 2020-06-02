@@ -8,7 +8,8 @@ export default {
   head: {
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" }
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "theme-color", content: "#8BD2F5" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
@@ -21,7 +22,7 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: "#fff" },
+  loading: { color: "#8BD2F5" },
   /*
    ** Global CSS
    */
@@ -41,17 +42,14 @@ export default {
   buildModules: [
     "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
+    ["@nuxtjs/pwa", { workbox: false, meta: false }],
     "@wearewondrous/nuxt-storyblok-router",
     "nuxt-webfontloader"
   ],
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    // "@nuxtjs/pwa",
-    "@nuxtjs/dotenv",
-    "@nuxtjs/apollo"
-  ],
+  modules: ["@nuxtjs/dotenv", "@nuxtjs/apollo"],
 
   /*
    * Apollo settings
@@ -86,6 +84,13 @@ export default {
         "https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap",
         "https://fonts.googleapis.com/css?family=Raleway:400&display=swap"
       ]
+    }
+  },
+
+  pwa: {
+    manifest: {
+      name: "freiluft festival",
+      lang: "de-CH"
     }
   },
 

@@ -24,6 +24,7 @@
             v-for="social_link in blok.social_links"
             :key="social_link._uid"
             :blok="social_link"
+            class="opacity-50 text-headline mr-2"
           />
         </div>
       </div>

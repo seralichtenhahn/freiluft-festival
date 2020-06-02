@@ -8,7 +8,7 @@
     </header>
     <main class="container mx-auto mb-8 md:mb-16">
       <p v-if="page.photographer">📷: {{ page.photographer }}</p>
-      <p v-if="page.date">📅: {{ page.date }}</p>
+      <p v-if="page.date">📅: {{ date }}</p>
       <ul class="flex flex-wrap -mx-1 pt-8 lg:-mx-6">
         <li
           v-for="image in computedImages"
@@ -70,6 +70,21 @@ export default {
         alt: this.getAltName(image),
         crop: "1x1"
       }))
+    },
+    date() {
+      if (!this.page.date) {
+        return ""
+      }
+
+      const date = new Date(this.page.date)
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      }
+
+      return date.toLocaleDateString("de-DE", options)
     }
   },
   apollo: {

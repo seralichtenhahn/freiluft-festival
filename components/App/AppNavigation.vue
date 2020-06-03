@@ -3,22 +3,25 @@
     v-editable="navigation"
     class="absolute top-0 w-full z-10 flex justify-end p-2"
   >
-    <ul class="flex border-r-2 pr-2 mr-2" :class="[navClasses]">
+    <ul
+      class="flex items-center border-r-2 pr-2 mr-1 lg:pr-4 lg:mr-2"
+      :class="[navClasses]"
+    >
       <li
         v-for="socialLink in navigation.social_menu"
         :key="socialLink._uid"
-        class="p-1"
+        class="p-1 py-2"
       >
-        <SocialLink :blok="socialLink" />
+        <SocialLink :blok="socialLink" height="h-5 lg:h-10" />
       </li>
     </ul>
-    <button @click="toggleMenu">
+    <button class="p-2" @click="toggleMenu">
       <span class="sr-only">Navigation öffnen</span>
       <span
         v-for="i in 3"
         :key="i"
         :class="[buttonClasses]"
-        class="block w-6 h-1 my-1 rounded-sm"
+        class="block w-6 h-1 my-1 rounded-sm lg:w-8 lg:my-2"
       ></span>
     </button>
     <transition

@@ -1,6 +1,6 @@
 <template>
   <a v-editable="blok" :href="blok.link" target="_blank" rel="noopener">
-    <component :is="blok.type" class="h-5 w-auto" />
+    <component :is="blok.type" :class="[height]" class="w-auto" />
     <span class="sr-only">{{ blok.type }}</span>
   </a>
 </template>
@@ -22,6 +22,10 @@ export default {
     blok: {
       type: Object,
       required: true
+    },
+    height: {
+      type: String,
+      default: "h-5"
     }
   }
 }

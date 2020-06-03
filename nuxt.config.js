@@ -12,8 +12,8 @@ export default {
       { name: "theme-color", content: "#8BD2F5" }
     ],
     link: [
-      { rel: "shortcut icon", href: "favicon.ico", type: "image/x-icon" },
-      { rel: "icon", href: "favicon.ico", type: "image/x-icon" }
+      { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }
     ]
   },
   /*

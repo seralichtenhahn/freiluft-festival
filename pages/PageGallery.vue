@@ -138,6 +138,8 @@ export default {
 </script>
 
 <style lang="postcss">
+@import "simplelightbox/dist/simple-lightbox.min.css";
+
 .sl-overlay {
   @apply bg-primary opacity-75;
 }

@@ -27,8 +27,7 @@
     "lazysizes": "^5.2.2",
     "nuxt": "^2.0.0",
     "simplelightbox": "^2.0.0",
-    "storyblok-js-client": "^2.5.0",
-    "storyblok-vue": "^1.0.5"
+    "storyblok-nuxt": "^1.2.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

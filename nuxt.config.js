@@ -36,8 +36,7 @@ export default {
   plugins: [
     "@/plugins/components.js",
     "@/plugins/filters.js",
-    "@/plugins/imports.js",
-    "@/plugins/storyblok.js"
+    "@/plugins/imports.js"
   ],
   /*
    ** Nuxt.js dev-modules
@@ -52,7 +51,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/dotenv", "@nuxtjs/apollo"],
+  modules: ["@nuxtjs/dotenv", "@nuxtjs/apollo", "storyblok-nuxt"],
 
   /*
    * Apollo settings

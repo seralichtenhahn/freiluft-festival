@@ -22,7 +22,7 @@ export default {
         return `mailto:${link.email}`
       }
 
-      return this.prependHttpToUrl(link.cached_url)
+      return this.prependHttpToUrl(link.url || link)
     }
   }
 }

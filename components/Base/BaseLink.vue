@@ -6,12 +6,7 @@
   >
     <slot />
   </nuxt-link>
-  <a
-    v-else
-    rel="noopener"
-    :href="compileExternalLink(link.url)"
-    target="_blank"
-  >
+  <a v-else rel="noopener" :href="compileExternalLink(link)" target="_blank">
     <slot />
   </a>
 </template>

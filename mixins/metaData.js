@@ -54,7 +54,8 @@ export default {
         meta && meta.og_image !== "" ? meta.og_image : defaultMeta.og_image
 
       if (url !== undefined && url !== "") {
-        const ogImgUrl = url.startsWith("http") ? url : `https:${url}`
+        const ogImgUrl = transformImg(url)
+
         return {
           property: `og:image`,
           content: ogImgUrl
@@ -64,12 +65,22 @@ export default {
       }
     }
 
+    function transformImg(url) {
+      const imageService = "//img2.storyblok.com/"
+      const path = url.replace("//a.storyblok.com", "")
+      const options = "1200x630/smart/filters:format(jpeg):quality(70)"
+      const fullUrl = imageService + options + path
+
+      return fullUrl.startsWith("http") ? fullUrl : `https:${fullUrl}`
+    }
+
     function createMetaImage(name, prefix = "") {
       const url =
         meta && meta.og_image !== "" ? meta.og_image : defaultMeta.og_image
 
       if (url !== undefined && url !== "") {
-        const ogImgUrl = url.startsWith("http") ? url : `https:${url}`
+        const ogImgUrl = transformImg(url)
+
         return {
           name: prefix + name,
           content: ogImgUrl,

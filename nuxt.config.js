@@ -76,7 +76,11 @@ export default {
     accessToken: process.env.STORYBLOK_TOKEN,
     version: process.env.STORYBLOK_VERSION,
     exclude: ["_settings"],
-    useFallback: true
+    useFallback: true,
+    sitemap: {
+      hostname: "https://freiluftfestival.ch",
+      cacheTime: 10000000000
+    }
   },
 
   webfontloader: {

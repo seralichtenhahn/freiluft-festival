@@ -13,7 +13,25 @@ export default {
     ],
     link: [
       { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: "true"
+      },
+      {
+        rel: "preload",
+        as: "style",
+        href:
+          "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Raleway&display=swap"
+      },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Raleway&display=swap",
+        media: "print",
+        onload: "this.media = 'all'"
+      }
     ]
   },
   /*
@@ -45,8 +63,7 @@ export default {
     "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
     ["@nuxtjs/pwa", { workbox: false, meta: false }],
-    "@wearewondrous/nuxt-storyblok-router",
-    "nuxt-webfontloader"
+    "@wearewondrous/nuxt-storyblok-router"
   ],
   /*
    ** Nuxt.js modules
@@ -80,16 +97,6 @@ export default {
     sitemap: {
       hostname: "https://freiluftfestival.ch",
       cacheTime: 10000000000
-    }
-  },
-
-  webfontloader: {
-    custom: {
-      families: ["Montserrat:n6,n7", "Raleway:n4"],
-      urls: [
-        "https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap",
-        "https://fonts.googleapis.com/css?family=Raleway:400&display=swap"
-      ]
     }
   },
 

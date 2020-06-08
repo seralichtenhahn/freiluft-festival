@@ -37,10 +37,10 @@ export default {
     options: {
       type: Array,
       default: () => [
-        { type: "image/webp", media: "(min-width: 768px)", width: "1080" },
-        { type: "image/webp", media: false, width: "720" },
-        { type: false, media: "(min-width: 768px)", width: "1080" },
-        { type: false, media: false, width: "720" }
+        { type: "image/webp", media: "(min-width: 768px)", width: "768" },
+        { type: "image/webp", media: false, width: "568" },
+        { type: false, media: "(min-width: 768px)", width: "768" },
+        { type: false, media: false, width: "568" }
       ]
     }
   },
@@ -94,7 +94,7 @@ export default {
         return `${options.width}x0/smart`
       }
 
-      const [width, , height] = this.image.crop.split("")
+      const [width, height] = this.image.crop.split("x")
 
       const ratio = width / height
 

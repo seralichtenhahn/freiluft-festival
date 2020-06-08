@@ -13,6 +13,7 @@
       </div>
       <BaseImage
         :image="blok.image[0]"
+        :lazy="blok.lazyload_image"
         :class="[imageStyle]"
         class="w-full md:flex-1 mb-6 mr-2"
       />

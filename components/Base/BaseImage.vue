@@ -3,12 +3,14 @@
     <source
       v-for="(option, i) in options"
       :key="i"
-      :data-srcset="getSourceSet(option)"
+      :srcset="!lazy && getSourceSet(option)"
+      :data-srcset="lazy && getSourceSet(option)"
       :media="option.media"
       :type="option.type"
     />
     <img
-      :data-src="getPath({ width: 1200 })"
+      :src="!lazy && getPath({ width: 1200 })"
+      :data-src="lazy && getPath({ width: 1200 })"
       :alt="image.alt"
       :class="[imgClasses]"
     />

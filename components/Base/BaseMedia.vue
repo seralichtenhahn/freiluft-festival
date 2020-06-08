@@ -19,7 +19,7 @@ export default {
     },
     aspectRatio: {
       type: String,
-      default: "ratio-16-by-9"
+      default: ""
     }
   },
   computed: {

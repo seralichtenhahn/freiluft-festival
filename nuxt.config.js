@@ -14,6 +14,13 @@ export default {
     link: [
       { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }
+    ],
+    script: [
+      {
+        "data-ad-client": "ca-pub-7071258324219296",
+        async: true,
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      }
     ]
   },
   /*

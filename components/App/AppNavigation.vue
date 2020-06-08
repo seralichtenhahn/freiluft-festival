@@ -35,7 +35,10 @@
         <div
           class="absolute bg-white w-full h-full p-4 flex flex-col justify-between"
         >
-          <button class="absolute top-0 right-0 w-8 h-8 m-2" @click="closeMenu">
+          <button
+            class="absolute top-0 right-0 w-8 h-8 m-2 mt-4 lg:h-12 lg:w-12"
+            @click="closeMenu"
+          >
             <span class="sr-only">Navigation schliessen</span>
             <IconX class="text-headline" />
           </button>

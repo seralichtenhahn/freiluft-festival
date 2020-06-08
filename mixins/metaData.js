@@ -31,7 +31,7 @@ export default {
     const defaultMeta = this.defaultMeta
 
     const currentLanguage = "de-CH"
-    const rootDomain = "https://freiluftfestival.ch/"
+    const rootDomain = "https://freiluftfestival.ch"
 
     function createOgTag(property, content) {
       if (content && content !== "") {

@@ -1150,14 +1150,14 @@
     webpack-node-externals "^1.7.2"
     webpackbar "^4.0.0"
 
-"@nuxtjs/apollo@^4.0.0-rc19":
-  version "4.0.0-rc19"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/apollo/-/apollo-4.0.0-rc19.tgz#145b50c8e0185dac83c37f48ab685861f9005850"
-  integrity sha512-OCUxdhz09vTA7jq4KrhdYw23PRXS4yHWST99Ohc1oSUiZUyNrmQc+VUNAz9bhSVjfHABrP1NP2FzKnBE1iEZhA==
+"@nuxtjs/apollo@^4.0.1-rc.1":
+  version "4.0.1-rc.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/apollo/-/apollo-4.0.1-rc.1.tgz#c11302107d1c2d7d955c74ec2308a178ed6280d1"
+  integrity sha512-i+/J/kL9rxw63ueJ4KpgqLt2Js0tYzoRgrUZ8eOT0sf/uDUCbvAxXlrOtgGD3ijVWolB2Dtlkz1YtJMJl8Lizw==
   dependencies:
     cross-fetch "^3.0.4"
-    universal-cookie "^4.0.2"
-    vue-apollo "^3.0.2"
+    universal-cookie "^4.0.3"
+    vue-apollo "^3.0.3"
     vue-cli-plugin-apollo "^0.21.3"
     webpack-node-externals "^1.7.2"
 
@@ -10380,7 +10380,7 @@ unique-string@^1.0.0:
   dependencies:
     crypto-random-string "^1.0.0"
 
-universal-cookie@^4.0.2:
+universal-cookie@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/universal-cookie/-/universal-cookie-4.0.3.tgz#c2fa59127260e6ad21ef3e0cdd66ad453cbc41f6"
   integrity sha512-YbEHRs7bYOBTIWedTR9koVEe2mXrq+xdjTJZcoKJK/pQaE6ni28ak2AKXFpevb+X6w3iU5SXzWDiJkmpDRb9qw==
@@ -10633,7 +10633,7 @@ vscode-uri@^1.0.6:
   resolved "https://registry.yarnpkg.com/vscode-uri/-/vscode-uri-1.0.8.tgz#9769aaececae4026fb6e22359cb38946580ded59"
   integrity sha512-obtSWTlbJ+a+TFRYGaUumtVwb+InIUVI0Lu0VBUAPmj2cU5JutEXg3xUE0c2J5Tcy7h2DEKVJBFi+Y9ZSFzzPQ==
 
-vue-apollo@^3.0.2:
+vue-apollo@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.3.tgz#7f29558df76eec0f03251847eef153816a261827"
   integrity sha512-WJaQ1v/i46/oIPlKv7J0Tx6tTlbuaeCdhrAbL06h+Zca2gzr5ywjUFpl8ijMTGJsQ+Ph/U4xEpBFBOMxQmL+7g==

@@ -27,11 +27,13 @@
     "lazysizes": "^5.2.2",
     "nuxt": "^2.0.0",
     "simplelightbox": "^2.0.0",
-    "storyblok-nuxt": "^1.2.0"
+    "storyblok-nuxt": "^1.2.0",
+    "vue-cookie-law": "^1.13.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/google-analytics": "^2.3.0",
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@wearewondrous/nuxt-storyblok-router": "git+https://github.com/seralichtenhahn/nuxt-storyblok-router.git",
     "babel-eslint": "^10.0.1",

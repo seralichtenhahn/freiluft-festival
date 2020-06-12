@@ -51,6 +51,7 @@ export default {
   buildModules: [
     "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-analytics",
     ["@nuxtjs/pwa", { workbox: false, meta: false }],
     "@wearewondrous/nuxt-storyblok-router",
     "nuxt-webfontloader"
@@ -76,8 +77,13 @@ export default {
       }
     }
   },
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID
+  },
+
   /*
-   * Apollo settings
+   * Storyblok Router settings
    */
   storyblokRouter: {
     accessToken: process.env.STORYBLOK_TOKEN,

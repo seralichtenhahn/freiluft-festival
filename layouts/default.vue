@@ -19,7 +19,7 @@
           class="bg-primary text-white px-4 py-2 rounded mx-auto md:mx-0 md:my-4"
           @click="props.accept"
         >
-          <span>I accept</span>
+          <span>akzeptieren</span>
         </button>
       </div>
     </CookieLaw>

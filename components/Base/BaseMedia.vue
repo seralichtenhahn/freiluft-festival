@@ -27,7 +27,7 @@ export default {
       return {
         container: this.container,
         "mx-auto": this.container,
-        "mb-16": true
+        "mb-16": this.container
       }
     },
     itemClasses() {

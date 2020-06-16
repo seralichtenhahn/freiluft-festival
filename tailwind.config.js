@@ -22,7 +22,9 @@ module.exports = {
         cyan: {
           default: "#00F2FE",
           darker: "#16E0FE"
-        }
+        },
+        youtube: "#FF0000",
+        facebook: "#4267B2"
       },
       fontSize: {
         "7xl": "5rem",

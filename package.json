@@ -31,7 +31,7 @@
     "vue-cookie-law": "^1.13.3"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^2.0.2",
+    "@nuxtjs/eslint-config": "^3.0.0",
     "@nuxtjs/eslint-module": "^1.2.0",
     "@nuxtjs/google-analytics": "^2.3.0",
     "@nuxtjs/tailwindcss": "^2.0.0",

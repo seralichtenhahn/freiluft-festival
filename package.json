@@ -37,7 +37,7 @@
     "@nuxtjs/tailwindcss": "^2.0.0",
     "@wearewondrous/nuxt-storyblok-router": "git+https://github.com/seralichtenhahn/nuxt-storyblok-router.git",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.3.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.4",

@@ -22,7 +22,7 @@
             class="w-full text-center bg-white px-4 leading-none"
           >
             <time
-              class=" text-justify text-4xl md:text-5xl lg:text-6xl font-headline text-cyan-darker"
+              class="text-justify text-4xl md:text-5xl lg:text-6xl font-headline text-cyan-darker"
               >{{ blok.date }}</time
             >
           </p>

@@ -1,6 +1,6 @@
 import Vue from "vue"
 
-Vue.filter("transformImage", function(image, option) {
+Vue.filter("transformImage", (image, option) => {
   if (!image) return ""
   if (!option) return ""
 

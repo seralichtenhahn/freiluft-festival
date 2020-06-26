@@ -44,7 +44,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "nuxt-webfontloader": "^1.1.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "vue-svg-loader": "^0.16.0"
   },
   "browserslist": [

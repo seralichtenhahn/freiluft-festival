@@ -1,7 +1,7 @@
 require("dotenv").config()
 
 export default {
-  mode: "universal",
+  ssr: true,
   /*
    ** Headers of the page
    */

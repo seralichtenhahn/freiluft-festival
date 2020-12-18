@@ -38,9 +38,9 @@ export default {
     "@nuxtjs/eslint-module",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-analytics",
+    "@nuxtjs/google-fonts",
     ["@nuxtjs/pwa", { workbox: false, meta: false }],
-    "@wearewondrous/nuxt-storyblok-router",
-    "nuxt-webfontloader"
+    "@wearewondrous/nuxt-storyblok-router"
   ],
   /*
    ** Nuxt.js modules
@@ -82,14 +82,12 @@ export default {
     }
   },
 
-  webfontloader: {
-    custom: {
-      families: ["Montserrat:n6,n7", "Raleway:n4"],
-      urls: [
-        "https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap",
-        "https://fonts.googleapis.com/css?family=Raleway:400&display=swap"
-      ]
-    }
+  googleFonts: {
+    families: {
+      Montserrat: [600, 700],
+      Raleway: [400]
+    },
+    display: "swap"
   },
 
   pwa: {

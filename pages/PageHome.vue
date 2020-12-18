@@ -20,7 +20,7 @@
 import AppHeader from "@/components/App/AppHeader"
 import AppLivestreamHeader from "@/components/App/AppLivestreamHeader"
 import storyBlokPage from "@/mixins/storyBlokPage"
-import query from "@/queries/getPagehome"
+import query from "@/queries/getPageHome"
 
 export default {
   components: {

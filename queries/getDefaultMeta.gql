@@ -1,0 +1,7 @@
+query getDefaultMeta {
+  SettingsItem(id: "_settings") {
+    content {
+      meta
+    }
+  }
+}

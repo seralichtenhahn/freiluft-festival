@@ -1,18 +1,14 @@
-import gql from "graphql-tag"
+import get from "lodash/get"
+import query from "@/queries/getDefaultMeta.gql"
 
 export default {
-  apollo: {
-    defaultMeta: {
-      query: gql`
-        query getDefaultMeta {
-          SettingsItem(id: "_settings") {
-            content {
-              meta
-            }
-          }
-        }
-      `,
-      update: (data) => data.SettingsItem.content.meta[0]
+  async fetch() {
+    const response = await this.$apollo.query({ query })
+    this.defaultMeta = get(response, "data.SettingsItem.content.meta[0]", false)
+  },
+  data() {
+    return {
+      defaultMeta: {}
     }
   },
   head() {

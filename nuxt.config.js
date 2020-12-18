@@ -1,7 +1,6 @@
-require("dotenv").config()
-
 export default {
-  mode: "universal",
+  ssr: true,
+  target: "static",
   /*
    ** Headers of the page
    */
@@ -14,20 +13,7 @@ export default {
     link: [
       { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" }
-    ],
-    script: [
-      {
-        "data-ad-client": "ca-pub-7071258324219296",
-        async: true,
-        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      }
     ]
-  },
-  /*
-   ** ENV Varables
-   */
-  env: {
-    STORYBLOK_TOKEN: process.env.STORYBLOK_TOKEN
   },
   /*
    ** Customize the progress-bar color
@@ -59,7 +45,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/dotenv", "@nuxtjs/apollo", "storyblok-nuxt"],
+  modules: ["@nuxtjs/apollo", "storyblok-nuxt"],
 
   /*
    * Apollo settings
@@ -120,6 +106,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    transpile: ["animejs"],
     extend(config, ctx) {
       const svgRule = config.module.rules.find((rule) => rule.test.test(".svg"))
 

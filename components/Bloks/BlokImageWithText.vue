@@ -1,12 +1,15 @@
 <template>
-  <div v-editable="blok" class="container mx-auto mb-8 md:mb-48">
+  <div
+    v-editable="blok"
+    class="container mx-auto mb-8 md:mb-24 lg:mb-36 xl:mb-48"
+  >
     <div class="flex flex-wrap md:flex-no-wrap md:items-start">
       <div class="w-full md:w-1/2 md:flex-none mb-4 md:mb-0">
         <BaseRichText :content="blok.text" />
         <BaseLink
           v-if="blok.cta_link && blok.cta_name"
           :link="blok.cta_link"
-          class="text-primary font-headline font-semibold uppercase border-primary border-b-2 text-primary"
+          class="text-primary font-headline font-semibold uppercase border-primary border-b-2"
         >
           {{ blok.cta_name }}
         </BaseLink>

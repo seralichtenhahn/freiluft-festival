@@ -7,6 +7,7 @@
       v-if="showCookieBanner"
       theme="ff-banner"
       class="bg-secondary bg-opacity-75"
+      @accept="enableCookies"
     >
       <div
         slot-scope="props"
@@ -15,12 +16,20 @@
         <p class="w-full text-center mb-2 md:text-left md:w-auto">
           Diese Seite benutzt Cookies um richtig zu funktionieren.
         </p>
-        <button
-          class="bg-primary text-white px-4 py-2 rounded mx-auto md:mx-0 md:my-4"
-          @click="props.accept"
-        >
-          <span>akzeptieren</span>
-        </button>
+        <div>
+          <button
+            class="bg-secondary text-white px-4 py-2 rounded mx-auto md:mx-0 md:my-4"
+            @click="props.close"
+          >
+            <span>schliessen</span>
+          </button>
+          <button
+            class="bg-primary text-white px-4 py-2 rounded mx-auto md:mx-0 md:my-4"
+            @click="props.accept"
+          >
+            <span>akzeptieren</span>
+          </button>
+        </div>
       </div>
     </CookieLaw>
   </div>
@@ -54,6 +63,14 @@ export default {
 
     if (!isCookieAccepted) {
       this.showCookieBanner = true
+    } else {
+      this.enableCookies()
+    }
+  },
+  methods: {
+    enableCookies() {
+      this.$ga.enable()
+      console.log("Cookies enabled")
     }
   }
 }

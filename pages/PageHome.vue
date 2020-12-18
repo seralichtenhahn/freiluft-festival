@@ -30,7 +30,6 @@ export default {
   mixins: [storyBlokPage],
   async fetch() {
     const response = await this.$apollo.query({ query })
-    console.log(response)
     const { header, content, meta } = response.data.PagehomeItem.content
     this.page = {
       header,

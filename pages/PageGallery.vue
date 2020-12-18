@@ -106,7 +106,6 @@ export default {
     showLightbox(e) {
       e.preventDefault()
       if (!this.lightboxes) {
-        console.log(SimpleLightbox)
         this.lightboxes = new SimpleLightbox(this.$refs.lightboxElements)
 
         const target = e.path.find((el) => el.nodeName === "A")

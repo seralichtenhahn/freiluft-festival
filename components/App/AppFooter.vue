@@ -42,27 +42,23 @@
 </template>
 
 <script>
-import gql from "graphql-tag"
+import get from "lodash/get"
 import BaseLink from "@/components/Base/BaseLink"
 import FreiluftLogoWhite from "@/assets/images/freiluft_logo_white.svg"
+import query from "@/queries/getFooter.gql"
 
 export default {
   components: {
     BaseLink,
     FreiluftLogoWhite
   },
-  apollo: {
-    footer: {
-      query: gql`
-        query getFooter {
-          SettingsItem(id: "_settings") {
-            content {
-              footer
-            }
-          }
-        }
-      `,
-      update: (data) => data.SettingsItem.content.footer[0]
+  async fetch() {
+    const response = await this.$apollo.query({ query })
+    this.footer = get(response, "data.SettingsItem.content.footer[0]", false)
+  },
+  data() {
+    return {
+      footer: {}
     }
   }
 }

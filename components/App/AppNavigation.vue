@@ -75,11 +75,12 @@
 </template>
 
 <script>
-import gql from "graphql-tag"
 import anime from "animejs/lib/anime.es.js"
+import get from "lodash/get"
 import BaseLink from "@/components/Base/BaseLink"
 import SocialLink from "@/components/SocialLink/SocialLink"
 import IconX from "@/assets/icons/x.svg"
+import query from "@/queries/getNavigation.gql"
 
 export default {
   components: {
@@ -93,23 +94,18 @@ export default {
       default: "dark"
     }
   },
+  async fetch() {
+    const response = await this.$apollo.query({ query })
+    this.navigation = get(
+      response,
+      "data.SettingsItem.content.navigation[0]",
+      false
+    )
+  },
   data() {
     return {
-      showNav: false
-    }
-  },
-  apollo: {
-    navigation: {
-      query: gql`
-        query getNavigation {
-          SettingsItem(id: "_settings") {
-            content {
-              navigation
-            }
-          }
-        }
-      `,
-      update: (data) => data.SettingsItem.content.navigation[0]
+      showNav: false,
+      navigation: {}
     }
   },
   computed: {

@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import gql from "graphql-tag"
 import AppHeader from "@/components/App/AppHeader"
 import AppLivestreamHeader from "@/components/App/AppLivestreamHeader"
 import storyBlokPage from "@/mixins/storyBlokPage"
+import query from "@/queries/getPagehome"
 
 export default {
   components: {
@@ -28,6 +28,15 @@ export default {
     AppLivestreamHeader
   },
   mixins: [storyBlokPage],
+  async fetch() {
+    const response = await this.$apollo.query({ query })
+    const { header, content, meta } = response.data.PagehomeItem.content
+    this.page = {
+      header,
+      content,
+      meta
+    }
+  },
   data() {
     return {
       page: {
@@ -35,22 +44,6 @@ export default {
         content: [],
         meta: []
       }
-    }
-  },
-  apollo: {
-    page: {
-      query: gql`
-        query getPagehome {
-          PagehomeItem(id: "home") {
-            content {
-              header
-              content
-              meta
-            }
-          }
-        }
-      `,
-      update: (data) => data.PagehomeItem.content
     }
   },
   computed: {

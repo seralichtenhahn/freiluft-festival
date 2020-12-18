@@ -1,0 +1,8 @@
+query getPageDefault($id: ID!) {
+  PagedefaultItem(id: $id) {
+    content {
+      title
+      content
+    }
+  }
+}

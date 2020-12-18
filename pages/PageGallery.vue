@@ -18,7 +18,7 @@
           <a
             ref="lightboxElements"
             :href="image.src | transformImage('1200x0/smart')"
-            class="block w-full relative pb-1/1 w-full"
+            class="block w-full relative pb-1/1"
             @click="showLightbox"
           >
             <BaseImage
@@ -34,16 +34,22 @@
 </template>
 
 <script>
-import gql from "graphql-tag"
 import SimpleLightbox from "simplelightbox"
 import storyBlokPage from "@/mixins/storyBlokPage"
 import BaseImage from "@/components/Base/BaseImage"
+import query from "@/queries/getPageGallery.gql"
 
 export default {
   components: {
     BaseImage
   },
   mixins: [storyBlokPage],
+  async fetch() {
+    const variables = { id: this.$route.path }
+    const response = await this.$apollo.query({ query, variables })
+
+    this.page = response.data.PagegalleryItem.content
+  },
   data() {
     return {
       page: {
@@ -85,33 +91,6 @@ export default {
       }
 
       return date.toLocaleDateString("de-DE", options)
-    }
-  },
-  apollo: {
-    page: {
-      query: gql`
-        query getPageGallery($id: ID!) {
-          PagegalleryItem(id: $id) {
-            content {
-              title
-              subtitle
-              photographer
-              date
-              images {
-                filename
-                name
-              }
-              meta
-            }
-          }
-        }
-      `,
-      update: (data) => data.PagegalleryItem.content,
-      variables() {
-        return {
-          id: this.$route.path
-        }
-      }
     }
   },
   methods: {

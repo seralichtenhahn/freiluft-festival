@@ -1,0 +1,15 @@
+query getPageGallery($id: ID!) {
+  PagegalleryItem(id: $id) {
+    content {
+      title
+      subtitle
+      photographer
+      date
+      images {
+        filename
+        name
+      }
+      meta
+    }
+  }
+}

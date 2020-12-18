@@ -1,0 +1,9 @@
+query getPagehome {
+  PagehomeItem(id: "home") {
+    content {
+      header
+      content
+      meta
+    }
+  }
+}

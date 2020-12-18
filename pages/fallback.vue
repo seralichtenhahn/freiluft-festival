@@ -15,36 +15,22 @@
 </template>
 
 <script>
-import gql from "graphql-tag"
 import storyBlokPage from "@/mixins/storyBlokPage"
+import query from "@/queries/getPageDefault.gql"
 
 export default {
   mixins: [storyBlokPage],
+  async fetch() {
+    const variables = { id: this.$route.path }
+    const response = await this.$apollo.query({ query, variables })
+
+    this.page = response.data.PagedefaultItem.content
+  },
   data() {
     return {
       page: {
         title: "",
         content: []
-      }
-    }
-  },
-  apollo: {
-    page: {
-      query: gql`
-        query getPageDefault($id: ID!) {
-          PagedefaultItem(id: $id) {
-            content {
-              title
-              content
-            }
-          }
-        }
-      `,
-      update: (data) => data.PagedefaultItem.content,
-      variables() {
-        return {
-          id: this.$route.path
-        }
       }
     }
   }

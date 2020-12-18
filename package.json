@@ -27,7 +27,7 @@
     "lazysizes": "^5.2.2",
     "lodash": "^4.17.20",
     "nuxt": "2.14.12",
-    "simplelightbox": "^2.2.1",
+    "simplelightbox": "^2.7.0",
     "storyblok-nuxt": "^1.2.0",
     "vue-cookie-law": "^1.13.3"
   },

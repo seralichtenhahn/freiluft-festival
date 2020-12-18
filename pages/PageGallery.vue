@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import SimpleLightbox from "simplelightbox"
+import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm.js"
 import storyBlokPage from "@/mixins/storyBlokPage"
 import BaseImage from "@/components/Base/BaseImage"
 import query from "@/queries/getPageGallery.gql"
@@ -106,6 +106,7 @@ export default {
     showLightbox(e) {
       e.preventDefault()
       if (!this.lightboxes) {
+        console.log(SimpleLightbox)
         this.lightboxes = new SimpleLightbox(this.$refs.lightboxElements)
 
         const target = e.path.find((el) => el.nodeName === "A")

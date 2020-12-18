@@ -105,7 +105,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    transpile: ["animejs"],
+    transpile: ["animejs", "simplelightbox"],
     extend(config, ctx) {
       const svgRule = config.module.rules.find((rule) => rule.test.test(".svg"))
 

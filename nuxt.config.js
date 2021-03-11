@@ -105,7 +105,12 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    transpile: ["animejs", "simplelightbox"],
+    transpile: ["animejs", "simplelightbox", "nuxt-protected-mailto"],
+    html: {
+      minify: {
+        decodeEntities: false
+      }
+    },
     extend(config, ctx) {
       const svgRule = config.module.rules.find((rule) => rule.test.test(".svg"))
 

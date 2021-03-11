@@ -18,7 +18,14 @@ export default {
   },
   computed: {
     classFontSize() {
-      return `text-${this.fontSize}`
+      const sizes = {
+        xs: "text-xs",
+        sm: "text-sm",
+        base: "text-base",
+        lg: "text-lg",
+        xl: "text-xl"
+      }
+      return sizes[this.fontSize]
     }
   }
 }

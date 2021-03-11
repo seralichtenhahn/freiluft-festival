@@ -5,22 +5,22 @@
     :size="blok.size"
     :aspect-ratio="blok.aspect_ratio"
   >
-    <iframe
-      :src="src"
-      frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
+    <LazyYoutubeVideo
       class="absolute inset-0 w-full h-full"
-    ></iframe>
+      :src="src"
+      :iframe-attributes="iframeAttributes"
+    />
   </BaseMedia>
 </template>
 
 <script>
 import BaseMedia from "@/components/Base/BaseMedia"
+import LazyYoutubeVideo from "vue-lazy-youtube-video"
 
 export default {
   components: {
-    BaseMedia
+    BaseMedia,
+    LazyYoutubeVideo
   },
   props: {
     blok: {
@@ -38,7 +38,20 @@ export default {
       }
 
       return youtube + this.blok.id
+    },
+    iframeAttributes() {
+      return {
+        frameborder: "0",
+        allow:
+          "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+        allowfullscreen: true,
+        class: "absolute inset-0 w-full h-full"
+      }
     }
   }
 }
 </script>
+
+<style lang="postcss">
+@import "vue-lazy-youtube-video/dist/style.css";
+</style>

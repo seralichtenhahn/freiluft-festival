@@ -3,6 +3,9 @@ export default {
     isInternalLink(linktype) {
       return linktype === "story"
     },
+    isEmail(linktype) {
+      return linktype === "email"
+    },
     prependHttpToUrl(url) {
       if (url.startsWith("http")) {
         return url
@@ -18,10 +21,6 @@ export default {
       return `/${url}`
     },
     compileExternalLink(link) {
-      if (link.linktype === "email") {
-        return `mailto:${link.email}`
-      }
-
       return this.prependHttpToUrl(link.url || link)
     }
   }

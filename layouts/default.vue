@@ -59,6 +59,7 @@ export default {
     }
   },
   mounted() {
+    this.$ga.disable()
     const isCookieAccepted = localStorage.getItem("cookie:accepted")
 
     if (!isCookieAccepted) {
@@ -70,7 +71,6 @@ export default {
   methods: {
     enableCookies() {
       this.$ga.enable()
-      console.log("Cookies enabled")
     }
   }
 }

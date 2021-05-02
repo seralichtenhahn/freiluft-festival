@@ -94,6 +94,12 @@ export default {
       default: "dark"
     }
   },
+  data() {
+    return {
+      showNav: false,
+      navigation: {}
+    }
+  },
   async fetch() {
     const response = await this.$apollo.query({ query })
     this.navigation = get(
@@ -101,12 +107,6 @@ export default {
       "data.SettingsItem.content.navigation[0]",
       false
     )
-  },
-  data() {
-    return {
-      showNav: false,
-      navigation: {}
-    }
   },
   computed: {
     navClasses() {

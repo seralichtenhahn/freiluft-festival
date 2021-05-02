@@ -74,18 +74,12 @@ export default {
 
 <style lang="postcss" scoped>
 h1 {
-  @apply text-4xl font-bold text-center text-white tracking-wider leading-none mb-4;
+  @apply text-4xl font-bold text-center text-white tracking-wider leading-none mb-4 md:text-6xl md:mb-6 xl:text-7xl;
 
   text-shadow: 0.2rem 0 theme("colors.secondary");
 
   @screen md {
-    @apply text-6xl mb-6;
-
     text-shadow: 0.3rem 0 theme("colors.secondary");
-  }
-
-  @screen xl {
-    @apply text-7xl;
   }
 }
 </style>

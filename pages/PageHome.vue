@@ -28,15 +28,6 @@ export default {
     AppLivestreamHeader
   },
   mixins: [storyBlokPage],
-  async fetch() {
-    const response = await this.$apollo.query({ query })
-    const { header, content, meta } = response.data.PagehomeItem.content
-    this.page = {
-      header,
-      content,
-      meta
-    }
-  },
   data() {
     return {
       page: {
@@ -44,6 +35,15 @@ export default {
         content: [],
         meta: []
       }
+    }
+  },
+  async fetch() {
+    const response = await this.$apollo.query({ query })
+    const { header, content, meta } = response.data.PagehomeItem.content
+    this.page = {
+      header,
+      content,
+      meta
     }
   },
   computed: {

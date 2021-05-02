@@ -52,14 +52,14 @@ export default {
     BaseLink,
     FreiluftLogoWhite
   },
-  async fetch() {
-    const response = await this.$apollo.query({ query })
-    this.footer = get(response, "data.SettingsItem.content.footer[0]", false)
-  },
   data() {
     return {
       footer: {}
     }
+  },
+  async fetch() {
+    const response = await this.$apollo.query({ query })
+    this.footer = get(response, "data.SettingsItem.content.footer[0]", false)
   }
 }
 </script>

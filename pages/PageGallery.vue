@@ -44,12 +44,6 @@ export default {
     BaseImage
   },
   mixins: [storyBlokPage],
-  async fetch() {
-    const variables = { id: this.$route.path }
-    const response = await this.$apollo.query({ query, variables })
-
-    this.page = response.data.PagegalleryItem.content
-  },
   data() {
     return {
       page: {
@@ -68,6 +62,12 @@ export default {
       ],
       lightboxes: null
     }
+  },
+  async fetch() {
+    const variables = { id: this.$route.path }
+    const response = await this.$apollo.query({ query, variables })
+
+    this.page = response.data.PagegalleryItem.content
   },
   computed: {
     computedImages() {

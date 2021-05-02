@@ -70,18 +70,12 @@ export default {
 
 <style lang="postcss" scoped>
 h1 {
-  @apply text-6xl font-bold text-center text-white tracking-wider leading-none;
+  @apply text-6xl font-bold text-center text-white tracking-wider leading-none md:text-9xl lg:text-12xl;
 
   text-shadow: 0.3rem 0 theme("colors.secondary");
 
   @screen md {
-    @apply text-9xl;
-
     text-shadow: 0.5rem 0 theme("colors.secondary");
-  }
-
-  @screen lg {
-    @apply text-12xl;
   }
 }
 </style>

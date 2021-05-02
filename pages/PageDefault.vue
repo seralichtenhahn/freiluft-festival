@@ -20,12 +20,6 @@ import query from "@/queries/getPageDefault.gql"
 
 export default {
   mixins: [storyBlokPage],
-  async fetch() {
-    const variables = { id: this.$route.path }
-    const response = await this.$apollo.query({ query, variables })
-
-    this.page = response.data.PagedefaultItem.content
-  },
   data() {
     return {
       page: {
@@ -33,6 +27,12 @@ export default {
         content: []
       }
     }
+  },
+  async fetch() {
+    const variables = { id: this.$route.path }
+    const response = await this.$apollo.query({ query, variables })
+
+    this.page = response.data.PagedefaultItem.content
   }
 }
 </script>

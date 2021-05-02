@@ -1,12 +1,14 @@
 <template>
   <div v-editable="blok" class="container mx-auto mb-16 md:mb-32">
-    <div class="flex flex-wrap md:flex-no-wrap md:items-center">
+    <div
+      :class="{ 'md:flex-row-reverse md:space-x-reverse': index % 2 === 0 }"
+      class="flex flex-wrap md:flex-nowrap md:items-center md:space-x-16 md:justify-between"
+    >
       <BaseImage
         :image="blok.image[0]"
-        :class="[imageStyle]"
         class="w-full mb-8 md:w-1/2 lg:w-5/12 md:mb-0"
       />
-      <div class="w-full md:w-1/2 lg:w-7/12">
+      <div class="w-full md:flex-1">
         <p v-if="blok.time">{{ blok.time }}</p>
         <h3
           class="text-4xl font-bold leading-none mb-2 md:text-6xl lg:text-9xl md:mb-6"
@@ -16,10 +18,10 @@
         <div class="flex items-center">
           <BaseLink
             :link="blok.link"
-            class="text-primary font-headline font-semibold uppercase border-primary border-b-2 text-primary"
+            class="text-primary font-headline font-semibold uppercase border-primary border-b-2"
             >Mehr infos</BaseLink
           >
-          <span class="mx-2">•</span>
+          <span v-if="blok.social_links.length" class="mx-2">•</span>
           <SocialLink
             v-for="social_link in blok.social_links"
             :key="social_link._uid"
@@ -51,17 +53,6 @@ export default {
     index: {
       type: Number,
       default: 0
-    }
-  },
-  computed: {
-    imageStyle() {
-      const styles = ["md:order-last md:ml-16", "md:mr-16"]
-
-      if (this.index === 0) {
-        return styles[0]
-      }
-
-      return styles[this.index % 2]
     }
   }
 }

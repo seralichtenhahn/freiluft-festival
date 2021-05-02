@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import SimpleLightbox from "simpleLightbox"
+import SimpleLightbox from "simplelightbox"
 import storyBlokPage from "@/mixins/storyBlokPage"
 import BaseImage from "@/components/Base/BaseImage"
 import query from "@/queries/getPageGallery.gql"

@@ -1,6 +1,5 @@
 export default {
-  ssr: true,
-  target: "static",
+  // target: "static",
   /*
    ** Headers of the page
    */
@@ -47,23 +46,6 @@ export default {
    */
   modules: ["@nuxtjs/apollo", "storyblok-nuxt"],
 
-  /*
-   * Apollo settings
-   */
-  apollo: {
-    clientConfigs: {
-      default: {
-        httpEndpoint: "https://gapi.storyblok.com/v1/api",
-        httpLinkOptions: {
-          headers: {
-            token: process.env.STORYBLOK_TOKEN,
-            version: process.env.STORYBLOK_VERSION
-          }
-        }
-      }
-    }
-  },
-
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID,
     disabled: false
@@ -91,11 +73,32 @@ export default {
     display: "swap"
   },
 
+  /*
+   * Apollo settings
+   */
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: "https://gapi.storyblok.com/v1/api",
+        httpLinkOptions: {
+          headers: {
+            token: process.env.STORYBLOK_TOKEN,
+            version: process.env.STORYBLOK_VERSION
+          }
+        }
+      }
+    }
+  },
+
   pwa: {
     manifest: {
       name: "freiluft festival",
       lang: "de-CH"
     }
+  },
+
+  tailwindcss: {
+    jit: true
   },
 
   /*

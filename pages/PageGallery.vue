@@ -18,7 +18,7 @@
           <a
             ref="lightboxElements"
             :href="image.src | transformImage('1200x0/smart')"
-            class="block w-full relative pb-1/1"
+            class="block w-full relative pb-1/1 glightbox"
             @click="showLightbox"
           >
             <BaseImage
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm.js"
+import SimpleLightbox from "simpleLightbox"
 import storyBlokPage from "@/mixins/storyBlokPage"
 import BaseImage from "@/components/Base/BaseImage"
 import query from "@/queries/getPageGallery.gql"

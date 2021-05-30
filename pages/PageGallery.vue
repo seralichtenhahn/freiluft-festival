@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen-90">
-    <header class="container mx-auto pt-16">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl">{{ page.title }}</h1>
+    <header class="container mx-auto pt-8">
+      <h1 class="text-6xl lg:text-8xl mb-4">{{ page.title }}</h1>
       <p v-if="page.subtitle">
         {{ page.subtitle }}
       </p>
@@ -9,17 +9,15 @@
     <main class="container mx-auto mb-8 md:mb-16">
       <p v-if="page.photographer">📷: {{ page.photographer }}</p>
       <p v-if="page.date">📅: {{ date }}</p>
-      <ul class="flex flex-wrap -mx-1 pt-8 lg:-mx-6">
+      <ul ref="lightboxGallery" class="flex flex-wrap -mx-1 pt-8 lg:-mx-6">
         <li
           v-for="image in computedImages"
           :key="image.name"
           class="w-1/3 p-1 lg:p-6"
         >
           <a
-            ref="lightboxElements"
             :href="image.src | transformImage('1200x0/smart')"
-            class="block w-full relative pb-1/1 glightbox"
-            @click="showLightbox"
+            class="block w-full relative glightbox"
           >
             <BaseImage
               :image="image"
@@ -34,7 +32,6 @@
 </template>
 
 <script>
-import SimpleLightbox from "simplelightbox"
 import storyBlokPage from "@/mixins/storyBlokPage"
 import BaseImage from "@/components/Base/BaseImage"
 import query from "@/queries/getPageGallery.gql"
@@ -102,23 +99,21 @@ export default {
       const name = image.filename.split("/")
 
       return name[name.length - 1]
-    },
-    showLightbox(e) {
-      e.preventDefault()
-      if (!this.lightboxes) {
-        this.lightboxes = new SimpleLightbox(this.$refs.lightboxElements)
-
-        const target = e.path.find((el) => el.nodeName === "A")
-        this.lightboxes.open(target)
-      }
     }
+    // showLightbox(e) {
+    //   e.preventDefault()
+    //   if (!this.lightboxes) {
+    //     this.lightboxes = lightGallery(this.$refs.lightboxGallery)
+
+    //     const target = e.path.find((el) => el.nodeName === "A")
+    //     this.lightboxes.open(target)
+    //   }
+    // }
   }
 }
 </script>
 
 <style lang="postcss">
-@import "simplelightbox/dist/simple-lightbox.min.css";
-
 .sl-overlay {
   @apply bg-primary opacity-75;
 }

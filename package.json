@@ -21,6 +21,7 @@
     "@vue/composition-api": "^1.0.0-rc.2",
     "animejs": "^3.2.1",
     "graphql-tag": "^2.11.0",
+    "lightgallery": "^2.1.0",
     "lodash": "^4.17.21",
     "nuxt": "2.15.6",
     "nuxt-protected-mailto": "^0.0.6",

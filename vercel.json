@@ -3,8 +3,10 @@
   "builds": [
     {
       "src": "nuxt.config.js",
-      "use": "@nuxtjs/now-builder",
-      "config": {}
+      "use": "@nuxtjs/vercel-builder",
+      "config": {
+        "memory": 3008 
+      }
     }
   ],
   "regions": ["bru1"],
@@ -26,21 +28,5 @@
       "RUN_WITH_SSR": "true",
       "STORYBLOK_VERSION": "draft"
     }
-  },
-  "routes": [
-    {
-      "src": "/_nuxt/.+",
-      "headers": {
-        "cache-control": "s-maxage=31536000",
-        "X-Robots-Tag": "none"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "headers": {
-        "X-Robots-Tag": "none"
-      },
-      "dest": "/"
-    }
-  ]
+  }
 }

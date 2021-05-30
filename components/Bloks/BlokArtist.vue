@@ -4,10 +4,18 @@
       :class="{ 'md:flex-row-reverse md:space-x-reverse': index % 2 === 0 }"
       class="flex flex-wrap md:flex-nowrap md:items-center md:space-x-16 md:justify-between"
     >
-      <BaseImage
-        :image="blok.image[0]"
-        class="w-full mb-8 md:w-1/2 lg:w-5/12 md:mb-0"
-      />
+      <div
+        ref="image"
+        class="w-full mb-8 md:w-1/2 lg:w-5/12 md:mb-0 bg-secondary preserve-3d p-3 shadow-xl"
+        style="transform: perspective(1000px)"
+      >
+        <BaseImage
+          :image="blok.image[0]"
+          :lazy="blok.lazyload_image"
+          class="block"
+          style="transform: translateZ(45px)"
+        />
+      </div>
       <div class="w-full md:flex-1">
         <p v-if="blok.time">{{ blok.time }}</p>
         <h3
@@ -38,6 +46,7 @@
 import BaseImage from "@/components/Base/BaseImage"
 import BaseLink from "@/components/Base/BaseLink"
 import SocialLink from "@/components/SocialLink/SocialLink"
+import VanillaTilt from "vanilla-tilt"
 
 export default {
   components: {
@@ -54,12 +63,13 @@ export default {
       type: Number,
       default: 0
     }
+  },
+  mounted() {
+    VanillaTilt.init(this.$refs.image, {
+      glare: true,
+      reverse: true,
+      max: 10
+    })
   }
 }
 </script>
-
-<style lang="postcss" scoped>
->>> picture {
-  box-shadow: 0.5rem 0.5rem 0 0 theme("colors.secondary");
-}
-</style>

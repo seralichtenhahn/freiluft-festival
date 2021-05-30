@@ -97,10 +97,6 @@ export default {
     }
   },
 
-  tailwindcss: {
-    jit: true
-  },
-
   /*
    ** Build configuration
    */

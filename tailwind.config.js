@@ -5,6 +5,7 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
+  mode: "jit",
   theme: {
     fontFamily: {
       headline: ["Montserrat", "sans-serif"],
@@ -43,10 +44,10 @@ module.exports = {
   variants: {},
   plugins: [],
   purge: [
-    "components/**/*.vue",
-    "layouts/**/*.vue",
-    "pages/**/*.vue",
-    "plugins/**/*.js",
-    "nuxt.config.js"
+    "./components/**/*.vue",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.js",
+    "./nuxt.config.js"
   ]
 }

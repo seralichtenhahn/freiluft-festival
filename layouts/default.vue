@@ -1,5 +1,6 @@
 <template>
   <div>
+    <AppBanner />
     <AppNavigation :mode="hasHeader" />
     <nuxt />
     <AppFooter />
@@ -38,11 +39,13 @@
 <script>
 import AppFooter from "@/components/App/AppFooter"
 import AppNavigation from "@/components/App/AppNavigation"
+import AppBanner from "@/components/App/AppBanner"
 
 export default {
   components: {
     AppFooter,
     AppNavigation,
+    AppBanner,
     CookieLaw: () => import("vue-cookie-law")
   },
   data() {
@@ -53,7 +56,7 @@ export default {
   computed: {
     hasHeader() {
       if (this.$route.name === "index") {
-        return "light"
+        return "dark"
       }
       return "dark"
     }

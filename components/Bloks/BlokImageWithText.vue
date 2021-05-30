@@ -12,11 +12,18 @@
       ]"
       class="flex flex-wrap md:flex-no-wrap md:space-x-16"
     >
-      <BaseImage
-        :image="blok.image[0]"
-        :lazy="blok.lazyload_image"
-        class="w-full md:flex-1 mb-6 mr-2"
-      />
+      <div
+        ref="image"
+        class="w-full md:flex-1 mb-4 md:mb-0 bg-secondary preserve-3d p-3 shadow-xl"
+        style="transform: perspective(1000px)"
+      >
+        <BaseImage
+          :image="blok.image[0]"
+          :lazy="blok.lazyload_image"
+          class="block"
+          style="transform: translateZ(40px)"
+        />
+      </div>
       <div class="w-full md:w-1/2 md:flex-none mb-4 md:mb-0">
         <BaseRichText :content="blok.text" />
         <BaseLink
@@ -35,6 +42,7 @@
 import BaseImage from "@/components/Base/BaseImage"
 import BaseLink from "@/components/Base/BaseLink"
 import BaseRichText from "@/components/Base/BaseRichText"
+import VanillaTilt from "vanilla-tilt"
 
 export default {
   components: {
@@ -56,12 +64,13 @@ export default {
       }
       return styles[this.blok.style]
     }
+  },
+  mounted() {
+    VanillaTilt.init(this.$refs.image, {
+      glare: true,
+      reverse: true,
+      max: 15
+    })
   }
 }
 </script>
-
-<style lang="postcss" scoped>
->>> picture {
-  box-shadow: 0.5rem 0.5rem 0 0 theme("colors.secondary");
-}
-</style>

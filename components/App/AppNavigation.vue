@@ -1,7 +1,7 @@
 <template>
   <nav
     v-editable="navigation"
-    class="absolute top-0 w-full z-10 flex justify-end p-2"
+    class="relative top-0 w-full z-10 flex justify-end p-2"
   >
     <ul
       class="flex items-center border-r-2 pr-2 mr-1 lg:pr-4 lg:mr-2"
@@ -42,7 +42,9 @@
             <span class="sr-only">Navigation schliessen</span>
             <IconX class="text-headline" />
           </button>
-          <ul class="pt-16 container mx-auto">
+          <ul
+            class="pt-16 container overflow-y-auto mx-auto space-y-2 md:space-y-6"
+          >
             <li v-for="linkItem in navigation.main_menu" :key="linkItem._uid">
               <BaseLink
                 :link="linkItem.link"

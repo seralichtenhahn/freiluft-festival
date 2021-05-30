@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="banner.text"
     v-editable="banner"
     class="bg-secondary text-headline text-center py-2 px-4"
   >

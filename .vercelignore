@@ -1,4 +1,7 @@
 .nuxt
+.github
+.netlify
+dist
 node_modules
 *.log
 README.md

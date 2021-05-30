@@ -56,9 +56,6 @@ export default {
 
       return this.page.header[0].component.replace("page", "app")
     }
-  },
-  mounted() {
-    console.log(this.page)
   }
 }
 </script>

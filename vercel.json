@@ -5,7 +5,7 @@
       "src": "nuxt.config.js",
       "use": "@nuxtjs/vercel-builder",
       "config": {
-        "memory": 104857600 
+        "memory": 3008 
       }
     }
   ],

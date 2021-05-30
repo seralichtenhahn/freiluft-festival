@@ -4,7 +4,7 @@
       :image="blok.image[0]"
       :lazy="blok.lazyload_image"
       :options="imageOptions"
-      class="w-full"
+      class="block w-full"
     />
     <p v-if="blok.caption" class="mt-4 italic text-sm text-center">
       {{ blok.caption }}
@@ -37,9 +37,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
->>> picture {
-  box-shadow: 0.5rem 0.5rem 0 0 theme("colors.secondary");
-}
-</style>

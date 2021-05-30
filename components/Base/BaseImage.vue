@@ -1,5 +1,5 @@
 <template>
-  <picture class="shadow">
+  <picture class="mx-auto">
     <source
       v-for="(option, i) in options"
       :key="i"
@@ -12,8 +12,8 @@
       :src="getPath({ width: 1200 })"
       :data-src="getPath({ width: 1200 })"
       :alt="image.alt"
-      :class="[imgClasses]"
       :loading="lazy ? 'lazy' : 'auto'"
+      class="w-full"
     />
   </picture>
 </template>

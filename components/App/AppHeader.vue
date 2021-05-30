@@ -1,54 +1,53 @@
 <template>
   <header
     v-editable="blok"
-    class="relative w-full min-h-screen overflow-x-hidden mb-8 md:mb-24"
+    class="flex flex-col pt-2 px-4 w-full min-h-[80vh] overflow-x-hidden mb-8 md:px-8 md:pt-4 md:mb-24 2xl:px-20 2xl:min-h-screen-90"
   >
-    <GradientSVG
-      class="pb-16 h-screen min-w-full max-w-screen-lg md:max-w-none transform -translate-x-32 md:translate-x-0"
-    />
     <div
-      class="absolute inset-0 flex justify-center container items-center mx-auto"
+      class="relative flex-1 flex justify-center items-center h-full rounded-xl overflow-hidden"
     >
-      <div class="flex flex-col md:flex-row pb-16 md:items-center">
-        <div
-          class="flex-1 pb-8 md:pb-0 md:pr-8 lg:max-w-md xl:pr-16 lg:max-w-lg"
-        >
-          <LogoSVG class="w-8/12 md:w-auto mx-auto" />
-        </div>
-        <div class="flex-1">
-          <h1>{{ blok.title }}</h1>
-          <p
-            v-if="blok.date"
-            class="w-full text-center bg-white px-4 leading-none"
-          >
-            <time
-              class="text-justify text-4xl md:text-5xl lg:text-6xl font-headline text-cyan-darker"
-              >{{ blok.date }}</time
-            >
-          </p>
+      <picture class="absolute inset-0 w-full h-full">
+        <source
+          media="(min-width: 768px)"
+          :srcset="require('@/assets/images/ff_bg_2021.jpg')"
+        />
+        <source :srcset="require('@/assets/images/ff_bg_2021_1x1.jpg')" />
+        <img
+          :src="require('@/assets/images/ff_bg_2021.jpg')"
+          class="h-full w-full object-cover object-center"
+          alt="Background Image"
+        />
+      </picture>
+      <div
+        aria-hidden="true"
+        class="absolute md:hidden inset-0 backdrop-filter backdrop-blur-sm bg-gray-500 bg-opacity-10 backdrop-brightness-90"
+      />
+      <div
+        class="container md:flex md:justify-start md:items-center lg:px-16 xl:px-24"
+      >
+        <div class="relative w-full md:w-1/2 xl:w-full xl:max-w-xl">
+          <FreiluftSignet />
         </div>
       </div>
     </div>
-    <div class="absolute text-center bottom-0 w-full h-16">
+    <div class="text-center w-full h-20 flex justify-center items-center">
       <button class="mx-auto" @click="scrollToContent">
         <span class="sr-only">Zum Inhalt scrollen</span>
-        <IconChevron class="text-primary w-12 h-12" />
+        <IconChevron class="text-headline w-12 h-12" />
       </button>
     </div>
   </header>
 </template>
 
 <script>
-import GradientSVG from "@/assets/images/gradient_bg.svg"
-import LogoSVG from "@/assets/images/freiluft_logo.svg"
 import IconChevron from "@/assets/icons/chevron-down.svg"
+import FreiluftSignet from "@/assets/images/freiluft_signet_mit_jahr.svg"
 
 export default {
   name: "AppHeader",
   components: {
-    GradientSVG,
-    LogoSVG,
-    IconChevron
+    IconChevron,
+    FreiluftSignet
   },
   props: {
     blok: {

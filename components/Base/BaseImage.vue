@@ -1,25 +1,24 @@
 <template>
-  <picture>
+  <picture class="shadow">
     <source
       v-for="(option, i) in options"
       :key="i"
-      :srcset="!lazy && getSourceSet(option)"
-      :data-srcset="lazy && getSourceSet(option)"
+      :srcset="getSourceSet(option)"
+      :data-srcset="getSourceSet(option)"
       :media="option.media"
       :type="option.type"
     />
     <img
-      :src="!lazy && getPath({ width: 1200 })"
-      :data-src="lazy && getPath({ width: 1200 })"
+      :src="getPath({ width: 1200 })"
+      :data-src="getPath({ width: 1200 })"
       :alt="image.alt"
       :class="[imgClasses]"
+      :loading="lazy ? 'lazy' : 'auto'"
     />
   </picture>
 </template>
 
 <script>
-import "lazysizes"
-
 export default {
   props: {
     image: {
@@ -53,7 +52,7 @@ export default {
       return "/placeholder/lqip-1x1.jpg"
     },
     imgClasses() {
-      return { lazyload: this.lazy, preview: this.placeholder }
+      return { preview: this.placeholder }
     }
   },
   methods: {

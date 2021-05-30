@@ -32,6 +32,7 @@ export default {
     return {
       page: {
         header: [],
+        banner: [],
         content: [],
         meta: []
       }
@@ -39,11 +40,12 @@ export default {
   },
   async fetch() {
     const response = await this.$apollo.query({ query })
-    const { header, content, meta } = response.data.PagehomeItem.content
+    const { header, content, meta, banner } = response.data.PagehomeItem.content
     this.page = {
       header,
       content,
-      meta
+      meta,
+      banner
     }
   },
   computed: {
@@ -54,6 +56,9 @@ export default {
 
       return this.page.header[0].component.replace("page", "app")
     }
+  },
+  mounted() {
+    console.log(this.page)
   }
 }
 </script>

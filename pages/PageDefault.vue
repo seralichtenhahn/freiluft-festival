@@ -24,7 +24,8 @@ export default {
     return {
       page: {
         title: "",
-        content: []
+        content: [],
+        meta: []
       }
     }
   },

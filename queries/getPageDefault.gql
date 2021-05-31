@@ -3,6 +3,7 @@ query getPageDefault($id: ID!) {
     content {
       title
       content
+      meta
     }
   }
 }

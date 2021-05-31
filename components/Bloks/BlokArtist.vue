@@ -68,7 +68,8 @@ export default {
     VanillaTilt.init(this.$refs.image, {
       glare: true,
       reverse: true,
-      max: 10
+      max: 10,
+      startX: this.index % 2 === 0 ? -6 : 6
     })
   }
 }

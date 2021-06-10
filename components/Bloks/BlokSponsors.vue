@@ -5,7 +5,7 @@
       :blok="blok.title_section[0]"
     />
     <div class="container mx-auto overflow-x-hidden">
-      <ul class="flex flex-wrap -mx-8 md:-mx-16">
+      <ul class="flex flex-wrap -mx-8 md:-mx-16 md:items-center">
         <li
           v-for="sponsor in blok.sponsors"
           :key="sponsor._uid"

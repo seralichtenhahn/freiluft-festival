@@ -43,8 +43,8 @@
         class="
           absolute
           inset-0
-          bg-gray-500 bg-opacity-10
-          backdrop-blur-sm backdrop-brightness-90 backdrop-filter
+          bg-gray-500 bg-opacity-30
+          backdrop-blur-sm
           md:hidden
         "
       />
@@ -62,7 +62,6 @@
           <p
             class="
               ml-2
-              xl:ml-4
               bg-gradient-to-br
               from-secondary
               to-[#fc9842]
@@ -70,10 +69,10 @@
               font-headline
               text-5xl
               font-bold
-              text-transparent text-secondary
+              text-transparent
               drop-shadow-lg
               lg:text-6xl
-              xl:text-7xl xl:leading-none
+              xl:ml-4 xl:text-7xl xl:leading-none
             "
           >
             {{ blok.date }}

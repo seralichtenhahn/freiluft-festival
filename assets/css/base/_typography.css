@@ -1,24 +1,8 @@
 p {
-  @apply font-body not-italic font-normal leading-relaxed normal-case tracking-normal text-body;
+  @apply font-body font-normal normal-case not-italic leading-relaxed tracking-normal text-body;
 
   & strong,
   & b {
     @apply font-bold;
-  }
-
-  & a {
-    @apply border-b-2;
-  }
-}
-
-.rich-text {
-  & p {
-    @apply mb-4 max-w-screen-md;
-  }
-
-  & li {
-    & p {
-      @apply mb-0;
-    }
   }
 }

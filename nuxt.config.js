@@ -21,7 +21,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ["@/assets/css/main.css"],
   /*
    ** Plugins to load before mounting the App
    */
@@ -34,8 +34,7 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    "@nuxtjs/eslint-module",
-    "@nuxtjs/tailwindcss",
+    "@nuxt/postcss8",
     "@nuxtjs/google-analytics",
     "@nuxtjs/google-fonts",
     ["@nuxtjs/pwa", { workbox: false, meta: false }],
@@ -134,6 +133,14 @@ export default {
           }
         ]
       })
+    },
+    postcss: {
+      plugins: {
+        "postcss-import": {},
+        "tailwindcss/nesting": {},
+        tailwindcss: {},
+        autoprefixer: {}
+      }
     },
     babel: {
       presets({ isServer }) {

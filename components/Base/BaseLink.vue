@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Mailto from "nuxt-protected-mailto/components/lib/Mailto"
+import Mailto from "nuxt-protected-mailto/components/Mailto"
 import links from "@/mixins/links"
 
 export default {

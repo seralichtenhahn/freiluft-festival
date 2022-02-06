@@ -39,10 +39,10 @@
 </template>
 
 <script>
+import VanillaTilt from "vanilla-tilt"
 import BaseImage from "@/components/Base/BaseImage"
 import BaseLink from "@/components/Base/BaseLink"
 import BaseRichText from "@/components/Base/BaseRichText"
-import VanillaTilt from "vanilla-tilt"
 
 export default {
   components: {

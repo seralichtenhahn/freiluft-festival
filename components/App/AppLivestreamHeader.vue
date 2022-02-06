@@ -4,10 +4,27 @@
     class="relative w-full min-h-screen overflow-x-hidden mb-8 md:mb-24"
   >
     <GradientSVG
-      class="pb-16 h-screen min-w-full max-w-screen-lg md:max-w-none transform -translate-x-32 md:translate-x-0"
+      class="
+        h-screen
+        pb-16
+        min-w-full
+        max-w-screen-lg
+        md:max-w-none
+        transform
+        -translate-x-32
+        md:translate-x-0
+      "
     />
     <div
-      class="absolute inset-0 flex justify-center container items-center mx-auto"
+      class="
+        absolute
+        inset-0
+        flex
+        justify-center
+        container
+        items-center
+        mx-auto
+      "
     >
       <div class="pb-16">
         <h1>{{ blok.title }}</h1>

@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import BaseMedia from "@/components/Base/BaseMedia"
 import LazyYoutubeVideo from "vue-lazy-youtube-video"
+import BaseMedia from "@/components/Base/BaseMedia"
 
 export default {
   components: {

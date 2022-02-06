@@ -1,9 +1,9 @@
 <template>
   <div
     v-editable="blok"
-    class="container mx-auto flex items-center flex-col justify-center mb-8"
+    class="container flex flex-col items-center justify-center mx-auto mb-8"
   >
-    <p class="text-2xl font-headline font-bold text-headline mb-4">
+    <p class="mb-4 text-2xl font-bold font-headline text-headline">
       {{ blok.text }}
     </p>
     <client-only>
@@ -17,7 +17,7 @@
       >
       <button
         id="ticketButton"
-        class="text-white bg-headline font-headline font-semibold uppercase px-4 py-2 text-center rounded tracking-wider mb-1"
+        class="px-4 py-2 mb-1 font-semibold tracking-wider text-center text-white uppercase rounded bg-headline font-headline"
         type="button"
       >
         {{ blok.label }}
@@ -27,7 +27,7 @@
           :href="blok.eventbrite_link"
           rel="noopener noreferrer"
           target="_blank"
-          class="italic text-xs"
+          class="text-xs italic"
           >Bei Schwierigkeiten, benutze diesen Link.</a
         >
       </p>
@@ -51,9 +51,7 @@ export default {
         eventId: this.blok.eventbrite_id,
         modal: true,
         modalTriggerElementId: "ticketButton",
-        onOrderComplete: () => {
-          console.log("success")
-        }
+        onOrderComplete: () => {}
       })
     }
     script.src = "https://www.eventbrite.ch/static/widgets/eb_widgets.js"

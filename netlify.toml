@@ -4,7 +4,7 @@
 
 [build.environment]
   YARN_VERSION = "1.12.3"
-  NODE_VERSION = "12.21.0"
+  NODE_VERSION = "14"
 
 [context.production]
   command = "sh .netlify/scripts/deploy-prod.sh"

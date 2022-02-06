@@ -1,12 +1,32 @@
 <template>
   <header
     v-editable="blok"
-    class="flex flex-col pt-2 px-4 w-full min-h-[80vh] overflow-x-hidden mb-8 md:px-8 md:pt-4 md:mb-24 2xl:px-20 2xl:min-h-screen-90"
+    class="
+      mb-8
+      flex
+      min-h-[80vh]
+      w-full
+      flex-col
+      overflow-x-hidden
+      px-4
+      pt-2
+      md:mb-24 md:px-8 md:pt-4
+      2xl:min-h-screen-90 2xl:px-20
+    "
   >
     <div
-      class="relative flex-1 flex justify-center items-center h-full rounded-xl overflow-hidden"
+      class="
+        relative
+        flex
+        h-full
+        flex-1
+        items-center
+        justify-center
+        overflow-hidden
+        rounded-xl
+      "
     >
-      <picture class="absolute inset-0 w-full h-full">
+      <picture class="absolute inset-0 h-full w-full">
         <source
           media="(min-width: 768px)"
           :srcset="require('@/assets/images/ff_bg_2021.jpg')"
@@ -20,20 +40,51 @@
       </picture>
       <div
         aria-hidden="true"
-        class="absolute md:hidden inset-0 backdrop-filter backdrop-blur-sm bg-gray-500 bg-opacity-10 backdrop-brightness-90"
+        class="
+          absolute
+          inset-0
+          bg-gray-500 bg-opacity-10
+          backdrop-blur-sm backdrop-brightness-90 backdrop-filter
+          md:hidden
+        "
       />
       <div
-        class="container md:flex md:justify-start md:items-center lg:px-16 xl:px-24"
+        class="
+          container
+          md:flex md:items-center md:justify-start
+          lg:px-16
+          xl:px-24
+        "
       >
         <div class="relative w-full md:w-1/2 xl:w-full xl:max-w-xl">
+          <h1 class="sr-only">{{ blok.title }}</h1>
           <FreiluftSignet />
+          <p
+            class="
+              ml-2
+              xl:ml-4
+              bg-gradient-to-br
+              from-secondary
+              to-[#fc9842]
+              bg-clip-text
+              font-headline
+              text-5xl
+              font-bold
+              text-transparent text-secondary
+              drop-shadow-lg
+              lg:text-6xl
+              xl:text-7xl xl:leading-none
+            "
+          >
+            {{ blok.date }}
+          </p>
         </div>
       </div>
     </div>
-    <div class="text-center w-full h-20 flex justify-center items-center">
+    <div class="flex h-20 w-full items-center justify-center text-center">
       <button class="mx-auto" @click="scrollToContent">
         <span class="sr-only">Zum Inhalt scrollen</span>
-        <IconChevron class="text-headline w-12 h-12" />
+        <IconChevron class="h-12 w-12 text-headline" />
       </button>
     </div>
   </header>
@@ -41,7 +92,7 @@
 
 <script>
 import IconChevron from "@/assets/icons/chevron-down.svg"
-import FreiluftSignet from "@/assets/images/freiluft_signet_mit_jahr.svg"
+import FreiluftSignet from "@/assets/images/freiluft_signet.svg"
 
 export default {
   name: "AppHeader",
@@ -66,15 +117,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-h1 {
-  @apply text-6xl font-bold text-center text-white tracking-wider leading-none md:text-9xl lg:text-12xl;
-
-  text-shadow: 0.3rem 0 theme("colors.secondary");
-
-  @screen md {
-    text-shadow: 0.5rem 0 theme("colors.secondary");
-  }
-}
-</style>

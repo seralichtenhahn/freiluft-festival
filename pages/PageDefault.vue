@@ -1,7 +1,11 @@
 <template>
   <div class="min-h-screen-90">
     <header class="container mx-auto pt-8 md:mb-4">
-      <h1 class="text-4xl md:text-6xl lg:text-8xl">{{ page.title }}</h1>
+      <h1
+        class="text-6xl lg:text-8xl mb-4 font-bold font-headline text-headline"
+      >
+        {{ page.title }}
+      </h1>
     </header>
     <main class="pt-8">
       <component

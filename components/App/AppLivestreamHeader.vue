@@ -27,7 +27,17 @@
       "
     >
       <div class="pb-16">
-        <h1>{{ blok.title }}</h1>
+        <h1
+          class="
+            text-6xl
+            lg:text-8xl
+            mb-4
+            font-bold font-headline
+            text-headline
+          "
+        >
+          {{ blok.title }}
+        </h1>
         <component
           :is="blok.stream[0].component"
           v-if="blok.stream.length"

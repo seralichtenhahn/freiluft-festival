@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="container mx-auto">
-      <h1>{{ page.title }}</h1>
+      <h1
+        class="text-6xl lg:text-8xl mb-4 font-bold font-headline text-headline"
+      >
+        {{ page.title }}
+      </h1>
     </div>
     <main v-if="page.content" class="pt-8">
       <component

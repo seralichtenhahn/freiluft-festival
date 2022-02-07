@@ -13494,6 +13494,11 @@ vue-cookie-law@^1.13.3:
   dependencies:
     tiny-cookie "^2.1.1"
 
+vue-easy-lightbox@^0.16.2:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/vue-easy-lightbox/-/vue-easy-lightbox-0.16.2.tgz#4390c5ac2aaaa60300d1f51969eaeedd21dd8f88"
+  integrity sha512-pkfLBk9dZ9T+fk6bRgehDpIvaS81hOgDqsGpVEDgw8cGtO9FLfAT8hakaqNQOgMTCwrnkQcdfLTLqnad2rq46w==
+
 vue-eslint-parser@^8.0.1:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-8.2.0.tgz#8c3990deb901b0d528d99f4d052a831cd1d0284c"

@@ -1,7 +1,11 @@
 <template>
   <div class="min-h-screen-90">
     <header class="container mx-auto pt-8">
-      <h1 class="text-6xl lg:text-8xl mb-4">{{ page.title }}</h1>
+      <h1
+        class="text-6xl lg:text-8xl mb-4 font-bold font-headline text-headline"
+      >
+        {{ page.title }}
+      </h1>
       <p v-if="page.subtitle">
         {{ page.subtitle }}
       </p>
@@ -9,36 +13,47 @@
     <main class="container mx-auto mb-8 md:mb-16">
       <p v-if="page.photographer">📷: {{ page.photographer }}</p>
       <p v-if="page.date">📅: {{ date }}</p>
-      <ul ref="lightboxGallery" class="flex flex-wrap -mx-1 pt-8 lg:-mx-6">
+      <ul class="grid grid-cols-3 pt-8 gap-2 md:gap-4">
         <li
-          v-for="image in computedImages"
+          v-for="(image, i) in computedImages"
           :key="image.name"
-          class="w-1/3 p-1 lg:p-6"
+          class="bg-primary aspect-square"
         >
-          <a
-            :href="image.src | transformImage('1200x0/smart')"
-            class="block w-full relative glightbox"
+          <button
+            type="button"
+            class="block w-full relative"
+            @click="openLightbox(i)"
           >
             <BaseImage
               :image="image"
               :options="imageOptions"
               :placeholder="true"
             />
-          </a>
+          </button>
         </li>
       </ul>
+      <client-only>
+        <VueEasyLightbox
+          :visible="visible"
+          :imgs="lighboxImages"
+          :index="index"
+          @hide="handleHide"
+        />
+      </client-only>
     </main>
   </div>
 </template>
 
 <script>
+import VueEasyLightbox from "vue-easy-lightbox"
 import storyBlokPage from "@/mixins/storyBlokPage"
 import BaseImage from "@/components/Base/BaseImage"
 import query from "@/queries/getPageGallery.gql"
 
 export default {
   components: {
-    BaseImage
+    BaseImage,
+    VueEasyLightbox
   },
   mixins: [storyBlokPage],
   data() {
@@ -57,7 +72,8 @@ export default {
         { type: false, media: "(min-width: 768px)", width: "480" },
         { type: false, media: false, width: "256" }
       ],
-      lightboxes: null
+      visible: false,
+      index: 0
     }
   },
   async fetch() {
@@ -72,6 +88,15 @@ export default {
         src: image.filename,
         alt: this.getAltName(image),
         crop: "1x1"
+      }))
+    },
+    lighboxImages() {
+      return this.page.images.map((image) => ({
+        src: this.$options.filters.transformImage(
+          image.filename,
+          "1200x0/smart"
+        ),
+        title: `${this.page.title} - Foto von ${this.page.photographer}`
       }))
     },
     date() {
@@ -99,16 +124,14 @@ export default {
       const name = image.filename.split("/")
 
       return name[name.length - 1]
+    },
+    handleHide() {
+      this.visible = false
+    },
+    openLightbox(index) {
+      this.index = index
+      this.visible = true
     }
-    // showLightbox(e) {
-    //   e.preventDefault()
-    //   if (!this.lightboxes) {
-    //     this.lightboxes = lightGallery(this.$refs.lightboxGallery)
-
-    //     const target = e.path.find((el) => el.nodeName === "A")
-    //     this.lightboxes.open(target)
-    //   }
-    // }
   }
 }
 </script>

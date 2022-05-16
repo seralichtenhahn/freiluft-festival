@@ -15,53 +15,24 @@
     "
   >
     <div
-      class="
-        relative
-        flex
-        h-full
-        flex-1
-        items-center
-        justify-center
-        overflow-hidden
-        rounded-xl
-      "
+      class="relative flex items-center justify-center flex-1 h-full overflow-hidden  rounded-xl"
     >
-      <picture class="absolute inset-0 h-full w-full">
-        <source
-          media="(min-width: 768px)"
-          :srcset="require('@/assets/images/ff_bg_2021.jpg')"
-        />
-        <source :srcset="require('@/assets/images/ff_bg_2021_1x1.jpg')" />
+      <picture class="absolute inset-0 w-full h-full">
+        <source :srcset="require('@/assets/images/banner.jpg')" />
         <img
-          :src="require('@/assets/images/ff_bg_2021.jpg')"
-          class="h-full w-full object-cover object-center"
+          :src="require('@/assets/images/banner.jpg')"
+          class="object-cover object-center w-full h-full"
           alt="Background Image"
         />
       </picture>
-      <div
-        aria-hidden="true"
-        class="
-          absolute
-          inset-0
-          bg-gray-500 bg-opacity-30
-          backdrop-blur-sm
-          md:hidden
-        "
-      />
-      <div
-        class="
-          container
-          md:flex md:items-center md:justify-start
-          lg:px-16
-          xl:px-24
-        "
-      >
-        <div class="relative w-full md:w-1/2 xl:w-full xl:max-w-xl">
+      <div class="container flex items-center justify-center lg:px-16 xl:px-24">
+        <div class="relative w-full xl:max-w-xl">
           <h1 class="sr-only">{{ blok.title }}</h1>
           <FreiluftSignet />
           <p
             class="
               ml-2
+              text-right
               bg-gradient-to-br
               from-secondary
               to-[#fc9842]
@@ -80,10 +51,10 @@
         </div>
       </div>
     </div>
-    <div class="flex h-20 w-full items-center justify-center text-center">
+    <div class="flex items-center justify-center w-full h-20 text-center">
       <button class="mx-auto" @click="scrollToContent">
         <span class="sr-only">Zum Inhalt scrollen</span>
-        <IconChevron class="h-12 w-12 text-headline" />
+        <IconChevron class="w-12 h-12 text-headline" />
       </button>
     </div>
   </header>

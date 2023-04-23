@@ -1,40 +1,14 @@
 <template>
   <header
     v-editable="blok"
-    class="relative w-full min-h-screen overflow-x-hidden mb-8 md:mb-24"
+    class="relative w-full min-h-screen mb-8 overflow-x-hidden md:mb-24"
   >
-    <GradientSVG
-      class="
-        h-screen
-        pb-16
-        min-w-full
-        max-w-screen-lg
-        md:max-w-none
-        transform
-        -translate-x-32
-        md:translate-x-0
-      "
-    />
     <div
-      class="
-        absolute
-        inset-0
-        flex
-        justify-center
-        container
-        items-center
-        mx-auto
-      "
+      class="container absolute inset-0 flex items-center justify-center mx-auto"
     >
       <div class="pb-16">
         <h1
-          class="
-            text-6xl
-            lg:text-8xl
-            mb-4
-            font-bold font-headline
-            text-headline
-          "
+          class="mb-4 text-6xl font-bold lg:text-8xl font-headline text-headline"
         >
           {{ blok.title }}
         </h1>
@@ -60,24 +34,22 @@
         />
       </div>
     </div>
-    <div class="absolute text-center bottom-0 w-full h-16">
+    <div class="absolute bottom-0 w-full h-16 text-center">
       <button class="mx-auto" @click="scrollToContent">
         <span class="sr-only">Zum Inhalt scrollen</span>
-        <IconChevron class="text-primary w-12 h-12" />
+        <IconChevron class="w-12 h-12 text-primary" />
       </button>
     </div>
   </header>
 </template>
 
 <script>
-import GradientSVG from "@/assets/images/gradient_bg.svg"
 import IconChevron from "@/assets/icons/chevron-down.svg"
 import BaseButton from "@/components/Base/BaseButton"
 
 export default {
   name: "AppLivestreamHeader",
   components: {
-    GradientSVG,
     IconChevron,
     BaseButton
   },

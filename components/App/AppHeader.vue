@@ -1,26 +1,15 @@
 <template>
   <header
     v-editable="blok"
-    class="
-      mb-8
-      flex
-      min-h-[80vh]
-      w-full
-      flex-col
-      overflow-x-hidden
-      px-4
-      pt-2
-      md:mb-24 md:px-8 md:pt-4
-      2xl:min-h-screen-90 2xl:px-20
-    "
+    class="mb-8 flex min-h-[80vh] w-full flex-col overflow-x-hidden px-4 pt-2 md:mb-24 md:px-8 md:pt-4 2xl:min-h-screen-90 2xl:px-20"
   >
     <div
-      class="relative flex items-center justify-center flex-1 h-full overflow-hidden  rounded-xl"
+      class="relative flex items-center justify-center flex-1 h-full overflow-hidden rounded-xl"
     >
       <picture class="absolute inset-0 w-full h-full">
-        <source :srcset="require('@/assets/images/banner.jpg')" />
+        <source :srcset="require('@/assets/images/hero.jpg')" />
         <img
-          :src="require('@/assets/images/banner.jpg')"
+          :src="require('@/assets/images/hero.jpg')"
           class="object-cover object-center w-full h-full"
           alt="Background Image"
         />
@@ -29,25 +18,11 @@
         <div class="relative w-full xl:max-w-xl">
           <h1 class="sr-only">{{ blok.title }}</h1>
           <FreiluftSignet />
-          <p
-            class="
-              ml-2
-              text-right
-              bg-gradient-to-br
-              from-secondary
-              to-[#fc9842]
-              bg-clip-text
-              font-headline
-              text-5xl
-              font-bold
-              text-transparent
-              drop-shadow-lg
-              lg:text-6xl
-              xl:ml-4 xl:text-7xl xl:leading-none
-            "
+          <!-- <p
+            class="ml-2 text-right bg-gradient-to-br from-secondary to-[#fc9842] bg-clip-text font-headline text-5xl font-bold text-transparent drop-shadow-lg lg:text-6xl xl:ml-4 xl:text-7xl xl:leading-none"
           >
             {{ blok.date }}
-          </p>
+          </p> -->
         </div>
       </div>
     </div>

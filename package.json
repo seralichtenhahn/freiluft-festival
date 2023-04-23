@@ -55,5 +55,8 @@
   "browserslist": [
     "last 2 versions",
     "not ie <= 11"
-  ]
+  ],
+  "engines": {
+    "node": "^14"
+  }
 }

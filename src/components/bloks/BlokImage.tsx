@@ -1,12 +1,13 @@
 import { storyblokEditable, type SbBlokData } from "@storyblok/react/rsc";
 
 import BaseImage, {
+  type BaseImageData,
   type ImageSourceOption,
 } from "@/components/base/BaseImage";
 import type { BaseBlok } from "@/types/storyblok";
 
 interface BlokImageProps extends BaseBlok {
-  image: string;
+  image: string | BaseImageData[];
   caption?: string;
   lazyload_image?: boolean;
 }
@@ -19,7 +20,13 @@ const options: ImageSourceOption[] = [
 ];
 
 export default function BlokImage({ blok }: { blok: BlokImageProps }) {
-  if (!blok.image) return null;
+  const image: BaseImageData | undefined =
+    typeof blok.image === "string"
+      ? blok.image
+        ? { src: blok.image, alt: blok.caption }
+        : undefined
+      : blok.image?.[0];
+  if (!image?.src) return null;
 
   return (
     <div
@@ -27,7 +34,7 @@ export default function BlokImage({ blok }: { blok: BlokImageProps }) {
       className="container mx-auto mb-8 md:mb-24"
     >
       <BaseImage
-        image={{ src: blok.image, alt: blok.caption }}
+        image={image}
         lazy={blok.lazyload_image}
         options={options}
         className="block w-full"

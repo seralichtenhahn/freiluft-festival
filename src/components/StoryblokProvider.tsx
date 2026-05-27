@@ -30,6 +30,7 @@ const components = {
   "blok-sponsors": BlokSponsors,
   "blok-spotify-player": BlokSpotifyPlayer,
   "blok-tickets": BlokTickets,
+  BlokTickets,
   "blok-title-section": BlokTitleSection,
   "blok-youtube-player": BlokYoutubePlayer,
 };

@@ -25,7 +25,7 @@ pnpm lint     # eslint
 | Variable                        | Required | Description                                   |
 | ------------------------------- | -------- | --------------------------------------------- |
 | `NEXT_PUBLIC_STORYBLOK_TOKEN`   | yes      | Storyblok preview/public access token         |
-| `NEXT_PUBLIC_STORYBLOK_VERSION` | no       | `draft` (default in non-prod) or `published`  |
+| `NEXT_PUBLIC_STORYBLOK_VERSION` | no       | `draft` (default) or `published` (prod only)  |
 
 ## Deployment
 

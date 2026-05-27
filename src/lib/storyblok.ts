@@ -41,7 +41,7 @@ export const getStoryblokApi = storyblokInit({
 });
 
 export const storyblokVersion = (): "draft" | "published" =>
-  (process.env.STORYBLOK_VERSION as "draft" | "published") || "draft";
+  (process.env.NEXT_PUBLIC_STORYBLOK_VERSION as "draft" | "published") || "draft";
 
 export async function fetchStory<T = unknown>(slug: string) {
   const api = getStoryblokApi();

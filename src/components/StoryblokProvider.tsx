@@ -18,20 +18,20 @@ import AppHeader from "@/components/app/AppHeader";
 import AppLivestreamHeader from "@/components/app/AppLivestreamHeader";
 
 const components = {
-  appheader: AppHeader,
-  applivestreamheader: AppLivestreamHeader,
-  blokartist: BlokArtist,
-  blokfacebookplayer: BlokFacebookPlayer,
-  blokiframe: BlokIframe,
-  blokimage: BlokImage,
-  blokimagewithtext: BlokImageWithText,
-  bloklineup: BlokLineUp,
-  blokrichtext: BlokRichtext,
-  bloksponsors: BlokSponsors,
-  blokspotifyplayer: BlokSpotifyPlayer,
-  bloktickets: BlokTickets,
-  bloktitlesection: BlokTitleSection,
-  blokyoutubeplayer: BlokYoutubePlayer,
+  "app-header": AppHeader,
+  "app-livestream-header": AppLivestreamHeader,
+  "blok-artist": BlokArtist,
+  "blok-facebook-player": BlokFacebookPlayer,
+  "blok-iframe": BlokIframe,
+  "blok-image": BlokImage,
+  "blok-image-with-text": BlokImageWithText,
+  "blok-line-up": BlokLineUp,
+  "blok-richtext": BlokRichtext,
+  "blok-sponsors": BlokSponsors,
+  "blok-spotify-player": BlokSpotifyPlayer,
+  "blok-tickets": BlokTickets,
+  "blok-title-section": BlokTitleSection,
+  "blok-youtube-player": BlokYoutubePlayer,
 };
 
 storyblokInit({

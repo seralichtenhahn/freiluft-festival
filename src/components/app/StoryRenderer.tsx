@@ -61,11 +61,11 @@ function PageDefault({ content }: { content: PageDefaultContent }) {
 
 export default function StoryRenderer({ content }: StoryRendererProps) {
   switch (content.component) {
-    case "pagehome":
+    case "page-home":
       return <PageHome content={content as PageHomeContent} />;
-    case "pagegallery":
+    case "page-gallery":
       return <PageGallery content={content as PageGalleryContent} />;
-    case "pagedefault":
+    case "page-default":
     default:
       return <PageDefault content={content as PageDefaultContent} />;
   }

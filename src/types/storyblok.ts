@@ -71,7 +71,7 @@ export interface SettingsContent {
 }
 
 export interface PageHomeContent {
-  component: "pagehome";
+  component: "page-home";
   header?: BaseBlok[];
   content?: BaseBlok[];
   meta?: MetaBlok[];
@@ -79,7 +79,7 @@ export interface PageHomeContent {
 }
 
 export interface PageDefaultContent {
-  component: "pagedefault";
+  component: "page-default";
   title: string;
   content?: BaseBlok[];
   meta?: MetaBlok[];
@@ -91,7 +91,7 @@ export interface GalleryImage {
 }
 
 export interface PageGalleryContent {
-  component: "pagegallery";
+  component: "page-gallery";
   title: string;
   subtitle?: string;
   photographer?: string;

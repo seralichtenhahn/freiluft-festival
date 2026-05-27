@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
 
-import { StoryblokServerComponent, type SbBlokData } from "@storyblok/react/rsc";
+import { StoryblokServerComponent, storyblokEditable, type SbBlokData } from "@storyblok/react/rsc";
 
 import PageGallery from "@/components/app/PageGallery";
+import BaseRichText from "@/components/base/BaseRichText";
 import type {
   BaseBlok,
   PageContent,
@@ -10,6 +11,11 @@ import type {
   PageGalleryContent,
   PageHomeContent,
 } from "@/types/storyblok";
+
+interface TitleSectionBlok extends BaseBlok {
+  title: string;
+  text?: unknown;
+}
 
 interface StoryRendererProps {
   content: PageContent;
@@ -24,16 +30,23 @@ function PageHome({ content }: { content: PageHomeContent }) {
     const blok = bloks[i];
     const next = bloks[i + 1];
     if (blok.component === "base-image" && next?.component === "blok-title-section") {
+      const titleBlok = next as TitleSectionBlok;
       rendered.push(
         <div
           key={blok._uid}
-          className="container mx-auto mb-8 md:mb-32 flex flex-wrap md:flex-nowrap md:items-center md:space-x-16"
+          className="container mx-auto px-4 mb-8 md:mb-32 flex flex-wrap md:flex-nowrap md:items-center md:space-x-12 lg:space-x-16"
         >
-          <div className="w-full md:w-1/2 md:flex-none mb-4 md:mb-0">
+          <div className="w-full md:w-5/12 lg:w-1/3 mb-4 md:mb-0">
             <StoryblokServerComponent blok={blok as unknown as SbBlokData} />
           </div>
-          <div className="w-full md:flex-1">
-            <StoryblokServerComponent blok={next as unknown as SbBlokData} />
+          <div
+            {...storyblokEditable(titleBlok as unknown as SbBlokData)}
+            className="w-full md:flex-1"
+          >
+            <h2 className="text-headline text-2xl md:text-3xl">{titleBlok.title}</h2>
+            {titleBlok.text != null && (
+              <BaseRichText content={titleBlok.text} fontSize="2xl" className="text-2xl" />
+            )}
           </div>
         </div>,
       );

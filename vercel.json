@@ -1,32 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "nuxt.config.js",
-      "use": "@nuxtjs/vercel-builder",
-      "config": {
-        "memory": 3008 
-      }
-    }
-  ],
-  "regions": ["bru1"],
-  "public": true,
-  "github": {
-    "enabled": true,
-    "silent": false
-  },
-  "env": {
-    "STORYBLOK_TOKEN": "@storyblok-token-draft",
-    "STORYBLOK_ONLY_PUBLIC": "0",
-    "RUN_WITH_SSR": "true",
-    "STORYBLOK_VERSION": "draft"
-  },
-  "build": {
-    "env": {
-      "STORYBLOK_TOKEN": "@storyblok-token-draft",
-      "STORYBLOK_ONLY_PUBLIC": "0",
-      "RUN_WITH_SSR": "true",
-      "STORYBLOK_VERSION": "draft"
-    }
-  }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": ["fra1"]
 }

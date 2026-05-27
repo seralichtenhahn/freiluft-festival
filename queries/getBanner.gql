@@ -1,7 +1,0 @@
-query getBanner {
-  SettingsItem(id: "_settings") {
-    content {
-      banner
-    }
-  }
-}

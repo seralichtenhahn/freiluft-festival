@@ -1,7 +1,0 @@
-query getNavigation {
-  SettingsItem(id: "_settings") {
-    content {
-      navigation
-    }
-  }
-}

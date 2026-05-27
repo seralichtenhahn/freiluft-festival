@@ -1,24 +1,32 @@
 # freiluft-festival
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bdd5c326-1ded-41b3-ba18-a5ee25f209d7/deploy-status)](https://app.netlify.com/sites/freiluft-festival/deploys)
+Website for the freiluft festival, built with Next.js 15 (App Router) and Storyblok CMS, deployed on Vercel.
 
-> rebuild of the freiluftfestival.ch website
-
-## Build Setup
+## Setup
 
 ```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+pnpm install
+cp .env.example .env.local
+# fill in NEXT_PUBLIC_STORYBLOK_TOKEN
+pnpm dev
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Scripts
+
+```bash
+pnpm dev      # local dev server on http://localhost:3000
+pnpm build    # production build
+pnpm start    # serve production build
+pnpm lint     # eslint
+```
+
+## Environment
+
+| Variable                        | Required | Description                                   |
+| ------------------------------- | -------- | --------------------------------------------- |
+| `NEXT_PUBLIC_STORYBLOK_TOKEN`   | yes      | Storyblok preview/public access token         |
+| `NEXT_PUBLIC_STORYBLOK_VERSION` | no       | `draft` (default in non-prod) or `published`  |
+
+## Deployment
+
+Deployed on Vercel. The `master` branch deploys to production; PRs get preview URLs automatically. Set the env vars above in the Vercel project settings.

@@ -1,7 +1,0 @@
-query getFooter {
-  SettingsItem(id: "_settings") {
-    content {
-      footer
-    }
-  }
-}

@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  p {
+    @apply font-body font-normal normal-case not-italic leading-relaxed tracking-normal text-body;
+  }
+
+  p strong,
+  p b {
+    @apply font-bold;
+  }
+
+  .is-h2,
+  h2,
+  .is-h3,
+  h3 {
+    @apply font-headline text-headline;
+  }
+}
+
+@layer utilities {
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+.yarl__container {
+  background-color: rgba(139, 210, 245, 0.85) !important;
+}

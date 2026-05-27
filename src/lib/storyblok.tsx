@@ -1,6 +1,7 @@
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 import type { ISbStoryParams } from "@storyblok/react/rsc";
 
+import BaseImage, { type BaseImageData } from "@/components/base/BaseImage";
 import BlokArtist from "@/components/bloks/BlokArtist";
 import BlokFacebookPlayer from "@/components/bloks/BlokFacebookPlayer";
 import BlokIframe from "@/components/bloks/BlokIframe";
@@ -16,9 +17,14 @@ import BlokYoutubePlayer from "@/components/bloks/BlokYoutubePlayer";
 import AppHeader from "@/components/app/AppHeader";
 import AppLivestreamHeader from "@/components/app/AppLivestreamHeader";
 
+function BaseImageBlok({ blok }: { blok: BaseImageData }) {
+  return <BaseImage image={blok} />;
+}
+
 export const blokComponents = {
   "app-header": AppHeader,
   "app-livestream-header": AppLivestreamHeader,
+  "base-image": BaseImageBlok,
   "blok-artist": BlokArtist,
   "blok-facebook-player": BlokFacebookPlayer,
   "blok-iframe": BlokIframe,

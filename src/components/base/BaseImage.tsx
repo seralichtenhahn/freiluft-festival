@@ -68,7 +68,7 @@ export default function BaseImage({
   if (!image?.src) return null;
 
   return (
-    <picture className={`mx-auto ${className ?? ""}`} style={style}>
+    <picture className={className} style={style}>
       {options.map((option, i) => (
         <source
           key={i}
@@ -82,7 +82,6 @@ export default function BaseImage({
         src={getPath(image, { width: 1200 })}
         alt={image.alt ?? ""}
         loading={lazy ? "lazy" : "eager"}
-        className="w-full"
       />
     </picture>
   );

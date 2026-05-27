@@ -1,10 +1,13 @@
-import BaseImage, { type ImageSourceOption } from "@/components/base/BaseImage";
+import BaseImage, {
+  type BaseImageData,
+  type ImageSourceOption,
+} from "@/components/base/BaseImage";
 import { compileExternalLink } from "@/lib/utils";
-import type { BaseBlok, StoryblokImage } from "@/types/storyblok";
+import type { BaseBlok } from "@/types/storyblok";
 
 interface SponsorBlok extends BaseBlok {
   link: { url?: string };
-  image: StoryblokImage[];
+  image: BaseImageData[];
 }
 
 const options: ImageSourceOption[] = [
@@ -16,8 +19,6 @@ export default function Sponsor({ blok }: { blok: SponsorBlok }) {
   const image = blok.image?.[0];
   if (!image) return null;
 
-  const imageData = { src: image.filename, alt: image.alt };
-
   if (blok.link?.url) {
     return (
       <a
@@ -25,10 +26,10 @@ export default function Sponsor({ blok }: { blok: SponsorBlok }) {
         rel="noopener"
         target="_blank"
       >
-        <BaseImage image={imageData} options={options} />
+        <BaseImage image={image} options={options} />
       </a>
     );
   }
 
-  return <BaseImage image={imageData} options={options} />;
+  return <BaseImage image={image} options={options} />;
 }

@@ -1,19 +1,18 @@
 import { storyblokEditable, type SbBlokData } from "@storyblok/react/rsc";
 
-import BaseImage from "@/components/base/BaseImage";
+import BaseImage, { type BaseImageData } from "@/components/base/BaseImage";
 import BaseLink from "@/components/base/BaseLink";
 import SocialLink from "@/components/app/SocialLink";
 import type {
   BaseBlok,
   SocialLinkBlok,
-  StoryblokImage,
   StoryblokLink,
 } from "@/types/storyblok";
 
 interface BlokArtistProps extends BaseBlok {
   title: string;
   time?: string;
-  image: StoryblokImage[];
+  image: BaseImageData[];
   link: StoryblokLink;
   social_links?: SocialLinkBlok[];
   lazyload_image?: boolean;
@@ -46,7 +45,7 @@ export default function BlokArtist({
             style={{ transform: "perspective(1000px)" }}
           >
             <BaseImage
-              image={{ src: image.filename, alt: image.alt }}
+              image={image}
               lazy={blok.lazyload_image}
               className="block"
               style={{ transform: "translateZ(45px)" }}

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { StoryblokLiveEditing, type ISbStoryData } from "@storyblok/react/rsc";
 
 import StoryRenderer from "@/components/app/StoryRenderer";
 import { fetchStory } from "@/lib/storyblok";
@@ -35,5 +36,10 @@ export default async function HomePage() {
       </main>
     );
   }
-  return <StoryRenderer content={story.content} />;
+  return (
+    <>
+      <StoryRenderer content={story.content} />
+      <StoryblokLiveEditing story={story as unknown as ISbStoryData} />
+    </>
+  );
 }

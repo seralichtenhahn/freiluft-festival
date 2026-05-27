@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { StoryblokLiveEditing, type ISbStoryData } from "@storyblok/react/rsc";
 
 import StoryRenderer from "@/components/app/StoryRenderer";
 import { fetchStory, getStoryblokApi, storyblokVersion } from "@/lib/storyblok";
@@ -57,5 +58,10 @@ export default async function CatchAllPage({ params }: PageProps) {
   const { slug } = await params;
   const story = await fetchStory<PageContent>(slug.join("/"));
   if (!story?.content) notFound();
-  return <StoryRenderer content={story.content} />;
+  return (
+    <>
+      <StoryRenderer content={story.content} />
+      <StoryblokLiveEditing story={story as unknown as ISbStoryData} />
+    </>
+  );
 }

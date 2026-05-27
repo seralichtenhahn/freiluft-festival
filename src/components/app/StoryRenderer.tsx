@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { StoryblokServerComponent, type SbBlokData } from "@storyblok/react/rsc";
 
 import PageGallery from "@/components/app/PageGallery";
@@ -15,6 +17,34 @@ interface StoryRendererProps {
 
 function PageHome({ content }: { content: PageHomeContent }) {
   const header = content.header?.[0];
+  const bloks = content.content ?? [];
+  const rendered: ReactNode[] = [];
+
+  for (let i = 0; i < bloks.length; i += 1) {
+    const blok = bloks[i];
+    const next = bloks[i + 1];
+    if (blok.component === "base-image" && next?.component === "blok-title-section") {
+      rendered.push(
+        <div
+          key={blok._uid}
+          className="container mx-auto mb-8 md:mb-32 flex flex-wrap md:flex-nowrap md:items-center md:space-x-16"
+        >
+          <div className="w-full md:w-1/2 md:flex-none mb-4 md:mb-0">
+            <StoryblokServerComponent blok={blok as unknown as SbBlokData} />
+          </div>
+          <div className="w-full md:flex-1">
+            <StoryblokServerComponent blok={next as unknown as SbBlokData} />
+          </div>
+        </div>,
+      );
+      i += 1;
+      continue;
+    }
+    rendered.push(
+      <StoryblokServerComponent key={blok._uid} blok={blok as unknown as SbBlokData} />,
+    );
+  }
+
   return (
     <div>
       {header && (
@@ -27,14 +57,7 @@ function PageHome({ content }: { content: PageHomeContent }) {
           }
         />
       )}
-      <main className="pt-8">
-        {content.content?.map((blok) => (
-          <StoryblokServerComponent
-            key={blok._uid}
-            blok={blok as unknown as SbBlokData}
-          />
-        ))}
-      </main>
+      <main className="pt-8">{rendered}</main>
     </div>
   );
 }

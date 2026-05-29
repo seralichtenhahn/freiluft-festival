@@ -40,15 +40,11 @@ export default function BlokArtist({
         }`}
       >
         {image && (
-          <div
-            className="w-full mb-8 md:w-1/2 lg:w-5/12 md:mb-0 bg-secondary preserve-3d p-3 shadow-xl"
-            style={{ transform: "perspective(1000px)" }}
-          >
+          <div className="w-full mb-8 md:w-1/2 lg:w-5/12 md:mb-0 bg-secondary p-3 shadow-xl">
             <BaseImage
               image={image}
               lazy={blok.lazyload_image}
               className="block"
-              style={{ transform: "translateZ(45px)" }}
             />
           </div>
         )}

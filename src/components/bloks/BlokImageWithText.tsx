@@ -34,15 +34,11 @@ export default function BlokImageWithText({
         } ${reverse ? "md:flex-row-reverse md:space-x-reverse" : ""}`}
       >
         {image && (
-          <div
-            className="w-full md:flex-1 mb-4 md:mb-0 bg-secondary preserve-3d p-3 shadow-xl"
-            style={{ transform: "perspective(1000px)" }}
-          >
+          <div className="w-full md:flex-1 mb-4 md:mb-0 bg-secondary p-3 shadow-xl">
             <BaseImage
               image={image}
               lazy={blok.lazyload_image}
               className="block"
-              style={{ transform: "translateZ(40px)" }}
             />
           </div>
         )}

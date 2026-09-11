@@ -4,7 +4,7 @@
   "description": "freiluftfestival.ch — Next.js + Storyblok",
   "author": "seralichtenhahn",
   "private": true,
-  "packageManager": "pnpm@10.28.0",
+  "packageManager": "pnpm@12.4.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
